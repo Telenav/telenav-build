@@ -6,6 +6,7 @@
 *~
 target/
 /parent/target/
+.idea.tmp/
 
 # IDE metadata
 nbproject/
