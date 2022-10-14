@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="kivakit-metrics-core" />
+        <module name="kivakit-network-ftp" />
+        <module name="mesakit-graph-world" />
+        <module name="mesakit-internal-map-geography-unit-tests" />
+        <module name="kivakit-data-compression" />
+        <module name="cactus-metadata" />
+        <module name="kivakit-web-swagger" />
+        <module name="mesakit-map-road-name-parser" />
+        <module name="kivakit-mixins" />
+        <module name="cactus-codeflowers" />
+        <module name="kivakit-collections" />
+        <module name="mesakit-map-geography-testing" />
+        <module name="kivakit-validation" />
+        <module name="kivakit-testing" />
+        <module name="mesakit-tools-applications-graph-dumper" />
+        <module name="mesakit-map-data-formats-pbf" />
+        <module name="mesakit-internal-graph-core-unit-tests" />
+        <module name="kivakit-serialization-properties" />
+        <module name="mesakit-map-region-testing" />
+        <module name="kivakit-network-email" />
+        <module name="mesakit-map-region" />
+        <module name="kivakit-math" />
+        <module name="mesakit-navigation-routing" />
+        <module name="kivakit-ui-desktop" />
+        <module name="mesakit-tools-applications-pbf-metadata" />
+        <module name="lexakai" />
+        <module name="mesakit-tools-applications-pbf-dumper" />
+        <module name="mesakit-map-overpass" />
+        <module name="kivakit-core" />
+        <module name="mesakit-plugins-josm-geojson" />
+        <module name="mesakit-internal-map-region-unit-tests" />
+        <module name="kivakit-network-socket" />
+        <module name="kivakit-microservice" />
+        <module name="cactus-util" />
+        <module name="kivakit-commandline" />
+        <module name="mesakit-tools-applications-pbf-filter" />
+        <module name="cactus-cli" />
+        <module name="kivakit-network-core" />
+        <module name="cactus-maven-model" />
+        <module name="kivakit-network-http" />
+        <module name="mesakit-map-cutter" />
+        <module name="mesakit-graph-core" />
+        <module name="kivakit-web-wicket" />
+        <module name="kivakit-serialization-core" />
+        <module name="mesakit-map-utilities-grid" />
+        <module name="mesakit-tools-applications-pbf-world-graph-extractor" />
+        <module name="kivakit-internal-testing" />
+        <module name="kivakit-service-viewer" />
+        <module name="mesakit-map-examples" />
+        <module name="mesakit-map-ui-debug" />
+        <module name="kivakit-logs-server" />
+        <module name="kivakit-logs-viewer" />
+        <module name="kivakit-component" />
+        <module name="cactus-graph" />
+        <module name="wordy" />
+        <module name="lexakai-annotations" />
+        <module name="mesakit-serialization-json" />
+        <module name="mesakit-map-utilities-geojson" />
+        <module name="mesakit-tools-applications-pbf-to-graph-converter" />
+        <module name="kivakit-data-formats-library" />
+        <module name="cactus-maven-versioning" />
+        <module name="kivakit-internal-tests-core" />
+        <module name="kivakit-logs-email" />
+        <module name="mesakit-map-measurements-testing" />
+        <module name="mesakit-map-measurements" />
+        <module name="mesakit-tools-applications-graph-analyzer" />
+        <module name="mesakit-tools-application-launcher" />
+        <module name="mesakit-tools-applications-graph-slicer" />
+        <module name="kivakit-metrics-prometheus" />
+        <module name="mesakit-graph-world-testing" />
+        <module name="kivakit-primitive-collections" />
+        <module name="mesakit-tools-applications-pbf-comparator" />
+        <module name="kivakit-examples-settings" />
+        <module name="kivakit-examples-microservice" />
+        <module name="kivakit-serialization-gson" />
+        <module name="mesakit-tools-applications-pbf-analyzer" />
+        <module name="kivakit-internal-tests-resource" />
+        <module name="mesakit-geocoding" />
+        <module name="kivakit-logs-file" />
+        <module name="kivakit-examples-application" />
+        <module name="kivakit-annotations" />
+        <module name="mesakit-map-utilities-geohash" />
+        <module name="mesakit-tools-applications-region-information" />
+        <module name="cactus-tasks" />
+        <module name="kivakit-interfaces" />
+        <module name="mesakit-internal-map-measurements-unit-tests" />
+        <module name="kivakit-service-server" />
+        <module name="kivakit-security" />
+        <module name="mesakit-graph-core-testing" />
+        <module name="mesakit-map-data-library" />
+        <module name="cactus-maven-xml" />
+        <module name="kivakit-serialization-kryo-testing" />
+        <module name="mesakit-graph-query" />
+        <module name="kivakit-web-jersey" />
+        <module name="kivakit-application" />
+        <module name="kivakit-serialization-kryo" />
+        <module name="mesakit-tools-applications-graph-to-pbf-converter" />
+        <module name="kivakit-web-jetty" />
+        <module name="kivakit-conversion" />
+        <module name="kivakit-settings-stores-zookeeper" />
+        <module name="mesakit-plugins-josm-graph" />
+        <module name="kivakit-examples-lambda" />
+        <module name="mesakit-tools-applications-codec-generator" />
+        <module name="mesakit-tools-applications-pbf-region-extractor" />
+        <module name="cactus-scope" />
+        <module name="mesakit-map-ui-desktop" />
+        <module name="kivakit-data-formats-xml" />
+        <module name="mesakit-tools-applications-graph-double-digitized-ways-extractor" />
+        <module name="mesakit-tools-applications-graph-verifier" />
+        <module name="cactus-maven-plugin" />
+        <module name="cactus-process" />
+        <module name="mesakit-map-road-name-standardizer" />
+        <module name="mesakit-plugins-josm-library" />
+        <module name="mesakit-map-shapefile" />
+        <module name="kivakit-data-formats-csv" />
+        <module name="kivakit-service-client" />
+        <module name="mesakit-core" />
+        <module name="mesakit-map-geography" />
+        <module name="kivakit-resource" />
+        <module name="mesakit-map-road-model" />
+        <module name="kivakit-extraction" />
+        <module name="cactus-maven-log" />
+        <module name="kivakit-service-registry" />
+        <module name="kivakit-settings" />
+        <module name="cactus-tests" />
+        <module name="kivakit-logs-client" />
+        <module name="cactus-git" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cactus-cli" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-codeflowers" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-git" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-graph" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-maven-log" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-maven-model" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-maven-plugin" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-maven-versioning" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-maven-xml" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-metadata" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-process" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-scope" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-tasks" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-tests" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="cactus-util" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-annotations" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-application" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-collections" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-commandline" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-component" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-conversion" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-core" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-data-compression" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-data-formats-csv" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-data-formats-library" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-data-formats-xml" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-examples-application" options="" />
+      <module name="kivakit-examples-lambda" options="" />
+      <module name="kivakit-examples-microservice" options="" />
+      <module name="kivakit-examples-settings" options="" />
+      <module name="kivakit-extraction" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-interfaces" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-internal-testing" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-internal-tests-core" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-internal-tests-resource" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-logs-client" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-logs-email" options="" />
+      <module name="kivakit-logs-file" options="" />
+      <module name="kivakit-logs-server" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-logs-viewer" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-math" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-metrics-core" options="" />
+      <module name="kivakit-metrics-prometheus" options="" />
+      <module name="kivakit-microservice" options="" />
+      <module name="kivakit-mixins" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-network-core" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-network-email" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-network-ftp" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-network-http" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-network-socket" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-primitive-collections" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-resource" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-security" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-serialization-core" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-serialization-gson" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-serialization-kryo" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-serialization-kryo-testing" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-serialization-properties" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-service-client" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-service-registry" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-service-server" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-service-viewer" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-settings" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-settings-stores-zookeeper" options="" />
+      <module name="kivakit-testing" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-ui-desktop" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-validation" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="kivakit-web-jersey" options="" />
+      <module name="kivakit-web-jetty" options="" />
+      <module name="kivakit-web-swagger" options="" />
+      <module name="kivakit-web-wicket" options="" />
+      <module name="lexakai" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="lexakai-annotations" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-core" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-geocoding" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-graph-core" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-graph-core-testing" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-graph-query" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-graph-world" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-graph-world-testing" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-internal-graph-core-unit-tests" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-internal-map-geography-unit-tests" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-internal-map-measurements-unit-tests" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-internal-map-region-unit-tests" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-cutter" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-data-formats-pbf" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-data-library" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-examples" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-geography" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-geography-testing" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-measurements" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-measurements-testing" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-overpass" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-region" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-region-testing" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-road-model" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-road-name-parser" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-road-name-standardizer" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-shapefile" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-ui-debug" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-ui-desktop" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-utilities-geohash" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-utilities-geojson" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-map-utilities-grid" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-navigation-routing" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-plugins-josm-geojson" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-plugins-josm-graph" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-plugins-josm-library" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-serialization-json" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-application-launcher" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-codec-generator" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-graph-analyzer" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-graph-double-digitized-ways-extractor" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-graph-dumper" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-graph-slicer" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-graph-to-pbf-converter" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-graph-verifier" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-pbf-analyzer" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-pbf-comparator" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-pbf-dumper" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-pbf-filter" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-pbf-metadata" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-pbf-region-extractor" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-pbf-to-graph-converter" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-pbf-world-graph-extractor" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="mesakit-tools-applications-region-information" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+      <module name="wordy" options="-Xlint:unchecked -Xlint:-requires-transitive-automatic -Xlint:deprecation" />
+    </option>
+  </component>
+</project>

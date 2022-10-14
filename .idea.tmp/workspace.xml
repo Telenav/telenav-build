@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b7c8cbd6-dfa2-4fb3-b33c-2005e3313d3a" name="Changes" comment="🔨 fix lexakai script">
+      <change afterPath="$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/messaging/listeners/AbortTransmissionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivakit-stuff" beforeDir="false" afterPath="$PROJECT_DIR$/kivakit-stuff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/messaging/broadcasters/AudienceMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/messaging/broadcasters/AudienceMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/messaging/broadcasters/Multicaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/messaging/broadcasters/Multicaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/messaging/listeners/ThrowingListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/messaging/listeners/ThrowingListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/messaging/repeaters/BaseRepeater.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/messaging/repeaters/BaseRepeater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivakit/kivakit-interfaces/src/main/java/com/telenav/kivakit/interfaces/naming/NamedObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivakit/kivakit-interfaces/src/main/java/com/telenav/kivakit/interfaces/naming/NamedObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexakai" beforeDir="false" afterPath="$PROJECT_DIR$/lexakai" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lexakai-annotations" beforeDir="false" afterPath="$PROJECT_DIR$/lexakai-annotations" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telenav-superpom" beforeDir="false" afterPath="$PROJECT_DIR$/telenav-superpom" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/develop" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/kivakit" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/kivakit-examples" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/lexakai-annotations" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/kivakit-extensions" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/kivakit" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083394" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/cactus" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/lexakai" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/kivakit-stuff" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/mesakit-extensions" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/telenav-superpom" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/mesakit" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1665090611" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="bugfix/lexakai-upgrade" />
+                    <option name="lastUsedInstant" value="1665083433" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/core-evaluation" />
+                    <option name="lastUsedInstant" value="1664916860" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/mesakit-examples" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="6f89ad4b-a41a-440e-be1a-cc86376dbe89" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="release\/.*" />
+        <option value="develop" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="047c73d5-832b-4807-88e9-98618a291e39" />
+        <option name="url" value="https://github.com/Telenav/telenav-build.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="Java" pattern="file:*.java" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2FM7WLRiK9OBiZTMw6gWtiiGPMP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;Git.Branch.Popup.ShowAllRepositories&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.github.patou.gitmoji.display-icon&quot;: &quot;emoji&quot;,
+    &quot;com.github.patou.gitmoji.text-after-unicode&quot;: &quot; &quot;,
+    &quot;com.github.patou.gitmoji.use-unicode&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jonathan/Workspaces/telenav-build/kivakit-stuff/documentation/lexakai&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;diff.external&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/kivakit-stuff/documentation/lexakai" />
+      <recent name="$PROJECT_DIR$/kivakit-extensions/documentation/lexakai" />
+      <recent name="$PROJECT_DIR$/kivakit-examples/documentation/lexakai" />
+      <recent name="$PROJECT_DIR$/kivakit/documentation/lexakai" />
+      <recent name="$PROJECT_DIR$/cactus/cactus-maven-xml/src/main/java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cactus/cactus-maven-xml/src/main/java-9" />
+      <recent name="$PROJECT_DIR$/cactus/cactus-maven-xml/src/main/java" />
+    </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="com.telenav.kivakit.core.string.Formatter" />
+      <recent name="com.telenav.kivakit.core.messaging.Messages" />
+      <recent name="com.telenav.kivakit.filesystem.Files" />
+      <recent name="com.telenav.kivakit.filesystem.Folders" />
+    </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="com.telenav.kivakit.core.messaging.listeners" />
+      <recent name="com.telenav.kivakit.core.string" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.telenav.kivakit.annotations.code.change" />
+      <recent name="com.telenav.kivakit.annotations.code" />
+      <recent name="com.telenav.kivakit.validation" />
+      <recent name="com.telenav.kivakit.validation.types" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.NumberReader">
+    <configuration name="Lexakai" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="M2_HOME" value="$USER_HOME$/Developer/apache-maven-3.8.5" />
+        <env name="JAVA_HOME" value="/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.telenav.lexakai.Lexakai" />
+      <module name="lexakai" />
+      <option name="PROGRAM_PARAMETERS" value="-update-readme=true $PROJECT_DIR$/kivakit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NumberReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.telenav.kivakit.microservice.NumberReader" />
+      <module name="kivakit-microservice" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContinentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mesakit-internal-map-region-unit-tests" />
+      <option name="PACKAGE_NAME" value="com.telenav.mesakit.map.region.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.telenav.mesakit.map.region.tests.ContinentTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContinentTest.testForLocation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mesakit-internal-map-region-unit-tests" />
+      <option name="PACKAGE_NAME" value="com.telenav.mesakit.map.region.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.telenav.mesakit.map.region.tests.ContinentTest" />
+      <option name="METHOD_NAME" value="testForLocation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeohashTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mesakit-map-utilities-geohash" />
+      <option name="PACKAGE_NAME" value="com.telenav.mesakit.map.utilities.geohash" />
+      <option name="MAIN_CLASS_NAME" value="com.telenav.mesakit.map.utilities.geohash.GeohashTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.NumberReader" />
+      <item itemvalue="Application.Lexakai" />
+      <item itemvalue="JUnit.ContinentTest" />
+      <item itemvalue="JUnit.ContinentTest.testForLocation" />
+      <item itemvalue="JUnit.GeohashTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.NumberReader" />
+        <item itemvalue="Application.Lexakai" />
+        <item itemvalue="JUnit.GeohashTest" />
+        <item itemvalue="JUnit.ContinentTest.testForLocation" />
+        <item itemvalue="JUnit.ContinentTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b7c8cbd6-dfa2-4fb3-b33c-2005e3313d3a" name="Changes" comment="" />
+      <created>1664290132707</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664290132707</updated>
+    </task>
+    <task id="LOCAL-00022" summary="🚧 completed analysis of kivakit-core">
+      <created>1664470780218</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1664470780218</updated>
+    </task>
+    <task id="LOCAL-00023" summary="🚧 completed analysis of kivakit-mixins">
+      <created>1664470903228</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1664470903228</updated>
+    </task>
+    <task id="LOCAL-00024" summary="🚧 completed analysis of kivakit-application">
+      <created>1664471539505</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1664471539505</updated>
+    </task>
+    <task id="LOCAL-00025" summary="🚧 completed analysis of kivakit-component project">
+      <created>1664471691386</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1664471691386</updated>
+    </task>
+    <task id="LOCAL-00026" summary="🚧 completed analysis of kivakit-validation project">
+      <created>1664481167084</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1664481167084</updated>
+    </task>
+    <task id="LOCAL-00027" summary="🚧 completed analysis of kivakit-conversion project">
+      <created>1664492466764</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1664492466764</updated>
+    </task>
+    <task id="LOCAL-00028" summary="🚧 completed analysis of kivakit-settings project">
+      <created>1664515346024</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1664515346024</updated>
+    </task>
+    <task id="LOCAL-00029" summary="🚧 completed analysis of kivakit-test project">
+      <created>1664515459313</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1664515459313</updated>
+    </task>
+    <task id="LOCAL-00030" summary="🚧 work in progress on analysis of kivakit-network project">
+      <created>1664517726718</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1664517726718</updated>
+    </task>
+    <task id="LOCAL-00031" summary="🚧 work in progress on analysis of kivakit-network project">
+      <created>1664517737596</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1664517737596</updated>
+    </task>
+    <task id="LOCAL-00032" summary="🚧 completed analysis of kivakit-network-core">
+      <created>1664557994556</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1664557994556</updated>
+    </task>
+    <task id="LOCAL-00033" summary="🚧 completed analysis of kivakit-network-email">
+      <created>1664558616877</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1664558616877</updated>
+    </task>
+    <task id="LOCAL-00034" summary="🚧 completed analysis of kivakit-network-ftp">
+      <created>1664559095291</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1664559095291</updated>
+    </task>
+    <task id="LOCAL-00035" summary="🚧 completed analysis of kivakit-network-socket">
+      <created>1664559248003</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1664559248003</updated>
+    </task>
+    <task id="LOCAL-00036" summary="🚧 completed analysis of kivakit-network">
+      <created>1664560090187</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1664560090187</updated>
+    </task>
+    <task id="LOCAL-00037" summary="🚧 completed analysis of kivakit-collections&#10; - moved MultiMap and MultiSet into kivakit-core">
+      <created>1664562925333</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1664562925333</updated>
+    </task>
+    <task id="LOCAL-00038" summary="🚧 completed analysis of kivakit-internal">
+      <created>1664565391695</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1664565391695</updated>
+    </task>
+    <task id="LOCAL-00039" summary="🚧 work in progress on kivakit-resource">
+      <created>1664571870188</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1664571870188</updated>
+    </task>
+    <task id="LOCAL-00040" summary="🚧 work in progress on kivakit-resource">
+      <created>1664577017102</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1664577017102</updated>
+    </task>
+    <task id="LOCAL-00041" summary="🚧 work in progress on kivakit-resource">
+      <created>1664577813054</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1664577813054</updated>
+    </task>
+    <task id="LOCAL-00042" summary="🚧 work in progress on kivakit-resource">
+      <created>1664597383117</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1664597383117</updated>
+    </task>
+    <task id="LOCAL-00043" summary="🚧 work in progress on kivakit-resource">
+      <created>1664649166957</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1664649166957</updated>
+    </task>
+    <task id="LOCAL-00044" summary="🚧 work in progress on kivakit-resource">
+      <created>1664663199586</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1664663199586</updated>
+    </task>
+    <task id="LOCAL-00045" summary="🚧 completed analysis of kivakit-resource">
+      <created>1664676816572</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1664676816572</updated>
+    </task>
+    <task id="LOCAL-00046" summary="🚧 completed analysis of kivakit-commandline">
+      <created>1664687195184</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1664687195184</updated>
+    </task>
+    <task id="LOCAL-00047" summary="🚧 completed analysis of all kivakit repository projects">
+      <created>1664689918447</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1664689918447</updated>
+    </task>
+    <task id="LOCAL-00048" summary="🚧 completed analysis of all kivakit-log">
+      <created>1664731582146</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1664731582146</updated>
+    </task>
+    <task id="LOCAL-00049" summary="🚧 completed analysis of all kivakit-settings-stores">
+      <created>1664733366704</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1664733366705</updated>
+    </task>
+    <task id="LOCAL-00050" summary="🚧 completed analysis of all kivakit-metrics">
+      <created>1664742651314</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1664742651314</updated>
+    </task>
+    <task id="LOCAL-00051" summary="🚧 completed analysis of all kivakit-web">
+      <created>1664743808618</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1664743808618</updated>
+    </task>
+    <task id="LOCAL-00052" summary="🚧 completed analysis of all kivakit-extensions">
+      <created>1664775908941</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1664775908942</updated>
+    </task>
+    <task id="LOCAL-00053" summary="🚧 completed analysis of kivakit and kivakit-extensions repositories">
+      <created>1664819424233</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1664819424233</updated>
+    </task>
+    <task id="LOCAL-00054" summary="🚧 completed analysis of kivakit and kivakit-extensions repositories">
+      <created>1664819432910</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1664819432910</updated>
+    </task>
+    <task id="LOCAL-00055" summary="🚧 work in progress on build regressions">
+      <created>1664835280966</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1664835280966</updated>
+    </task>
+    <task id="LOCAL-00056" summary="🚧 sync">
+      <created>1664889578457</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1664889578457</updated>
+    </task>
+    <task id="LOCAL-00057" summary=" work in progress on build regressions">
+      <created>1664916342855</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1664916342855</updated>
+    </task>
+    <task id="LOCAL-00058" summary="💚 all tests pass">
+      <created>1664918941958</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1664918941958</updated>
+    </task>
+    <task id="LOCAL-00059" summary="🔖 update change-log.md for kivakit">
+      <created>1664983097711</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1664983097711</updated>
+    </task>
+    <task id="LOCAL-00060" summary="🔖 fix lexakai for release">
+      <created>1665083268590</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1665083268590</updated>
+    </task>
+    <task id="LOCAL-00061" summary="🔖 fix lexakai for release">
+      <created>1665083317507</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1665083317507</updated>
+    </task>
+    <task id="LOCAL-00062" summary="🔖 fix lexakai for release">
+      <created>1665083322964</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1665083322964</updated>
+    </task>
+    <task id="LOCAL-00063" summary="🔖 fix lexakai for release">
+      <created>1665085662764</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1665085662764</updated>
+    </task>
+    <task id="LOCAL-00064" summary="🔖 fix lexakai for release">
+      <created>1665140119125</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1665140119125</updated>
+    </task>
+    <task id="LOCAL-00065" summary="🔖 update build status to remove release builds">
+      <created>1665145198038</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1665145198038</updated>
+    </task>
+    <task id="LOCAL-00066" summary="🔖 update build status to remove release builds">
+      <created>1665145218158</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1665145218158</updated>
+    </task>
+    <task id="LOCAL-00067" summary="🔖 update lexakai to output code quality measurements">
+      <created>1665151553249</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1665151553249</updated>
+    </task>
+    <task id="LOCAL-00068" summary="🔖 update lexakai to output code quality measurements">
+      <created>1665158438845</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1665158438845</updated>
+    </task>
+    <task id="LOCAL-00069" summary="🔖 update lexakai to output code quality measurements">
+      <created>1665187101478</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1665187101479</updated>
+    </task>
+    <task id="LOCAL-00070" summary="🔨 fix lexakai script">
+      <created>1665253408675</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1665253408675</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="38ab8bd0-65b4-4a52-94de-2664b78b57b8">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value=" completed analysis of kivakit-collections&#10; - moved MultiMap and MultiSet into kivakit-core" />
+    <MESSAGE value=" completed analysis of kivakit-internal" />
+    <MESSAGE value=" work in progress on kivakit-resource" />
+    <MESSAGE value=" work in progress on kivakit-resource" />
+    <MESSAGE value=" work in progress on kivakit-resource" />
+    <MESSAGE value=" work in progress on kivakit-resource" />
+    <MESSAGE value=" work in progress on kivakit-resource" />
+    <MESSAGE value=" completed analysis of kivakit-resource" />
+    <MESSAGE value=" completed analysis of kivakit-commandline" />
+    <MESSAGE value=" completed analysis of all kivakit repository projects" />
+    <MESSAGE value=" completed analysis of all kivakit-log" />
+    <MESSAGE value=" completed analysis of all kivakit-settings-stores" />
+    <MESSAGE value=" completed analysis of all kivakit-metrics" />
+    <MESSAGE value=" completed analysis of all kivakit-web" />
+    <MESSAGE value=" completed analysis of all kivakit-extensions" />
+    <MESSAGE value=" completed analysis of kivakit and kivakit-extensions repositories" />
+    <MESSAGE value=" sync" />
+    <MESSAGE value=" work in progress on build regressions" />
+    <MESSAGE value=" all tests pass" />
+    <MESSAGE value=" update change-log.md for kivakit" />
+    <MESSAGE value=" fix lexakai for release" />
+    <MESSAGE value=" update build status to remove release builds" />
+    <MESSAGE value=" update lexakai to output code quality measurements" />
+    <MESSAGE value=" update lexakai to output code quality measurements" />
+    <MESSAGE value=" fix lexakai script" />
+    <option name="LAST_COMMIT_MESSAGE" value=" fix lexakai script" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/time/Duration.java</url>
+          <line>565</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/time/Time.java</url>
+          <line>355</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit/kivakit-collections/src/test/java/com/telenav/kivakit/collections/set/SetDifferencerTest.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit/kivakit-collections/src/test/java/com/telenav/kivakit/collections/set/SetDifferencerTest.java</url>
+          <line>99</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit/kivakit-collections/src/main/java/com/telenav/kivakit/collections/set/SetDifferencer.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit-stuff/kivakit-data/compression/src/test/java/com/telenav/kivakit/data/compression/codecs/huffman/list/HuffmanStringListCodecTest.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit-stuff/kivakit-data/compression/src/test/java/com/telenav/kivakit/data/compression/codecs/huffman/list/HuffmanStringListCodecTest.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit-stuff/kivakit-data/compression/src/test/java/com/telenav/kivakit/data/compression/codecs/huffman/list/HuffmanStringListCodecTest.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit-stuff/kivakit-primitive-collections/src/main/java/com/telenav/kivakit/primitive/collections/PrimitiveCollection.java</url>
+          <line>1241</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/language/reflection/Type.java</url>
+          <line>862</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit-stuff/kivakit-primitive-collections/src/main/java/com/telenav/kivakit/primitive/collections/array/scalars/ByteArray.java</url>
+          <line>385</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mesakit/mesakit-graph/core/src/main/java/com/telenav/mesakit/graph/Graph.java</url>
+          <line>1122</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mesakit/mesakit-graph/core/src/main/java/com/telenav/mesakit/graph/Graph.java</url>
+          <line>1126</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/language/reflection/Field.java</url>
+          <line>220</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mesakit/mesakit-map/utilities/geohash/src/test/java/com/telenav/mesakit/map/utilities/geohash/GeohashTest.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mesakit/mesakit-map/utilities/geohash/src/test/java/com/telenav/mesakit/map/utilities/geohash/GeohashTest.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mesakit/mesakit-map/utilities/geohash/src/test/java/com/telenav/mesakit/map/utilities/geohash/GeohashTest.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mesakit/mesakit-map/utilities/geohash/src/test/java/com/telenav/mesakit/map/utilities/geohash/GeohashTest.java</url>
+          <line>233</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kivakit/kivakit-core/src/main/java/com/telenav/kivakit/core/value/count/BaseCount.java</url>
+          <line>716</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mesakit/mesakit-internal/map-region-unit-tests/src/test/java/com/telenav/mesakit/map/region/tests/ContinentTest.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Developer/amazon-corretto-17.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/ClassCastException.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Developer/amazon-corretto-17.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/ClassCastException.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Developer/amazon-corretto-17.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/UnsupportedOperationException.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Developer/amazon-corretto-17.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/UnsupportedOperationException.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Developer/amazon-corretto-17.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/UnsupportedOperationException.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Developer/amazon-corretto-17.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/UnsupportedOperationException.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lexakai/src/main/java/com/telenav/lexakai/LexakaiProject.java</url>
+          <line>520</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lexakai/src/main/java/com/telenav/lexakai/indexes/ReadMeUpdater.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lexakai/src/main/java/com/telenav/lexakai/indexes/ReadMeUpdater.java</url>
+          <line>145</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lexakai/src/main/java/com/telenav/lexakai/quality/CodeQualityAnalysis.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/kivakit/kivakit-resource/src/main/java/com/telenav/kivakit/filesystem/FolderChangeWatcher.java</url>
+          <line>86</line>
+          <properties class="com.telenav.kivakit.filesystem.FolderChangeWatcher" method="lastModified">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/kivakit/kivakit-settings/src/main/java/com/telenav/kivakit/settings/stores/MemorySettingsStore.java</url>
+          <line>35</line>
+          <properties class="com.telenav.kivakit.settings.stores.MemorySettingsStore" method="accessModes">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

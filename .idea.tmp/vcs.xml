@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cactus" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cactus-assets" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/kivakit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/kivakit-assets" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/kivakit-examples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/kivakit-extensions" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/kivakit-stuff" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lexakai" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lexakai-annotations" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/lexakai-assets" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mesakit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mesakit-assets" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mesakit-examples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mesakit-extensions" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/telenav-superpom" vcs="Git" />
+  </component>
+</project>
