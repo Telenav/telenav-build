@@ -42,7 +42,6 @@
 
         <module>telenav-superpom</module>
         <module>kivakit</module>
-        <module>cactus</module>
         <module>kivakit-extensions</module>
         <module>kivakit-stuff</module>
         <module>kivakit-filesystems</module>
