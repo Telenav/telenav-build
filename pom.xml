@@ -41,9 +41,9 @@
     <modules>
 
         <module>telenav-superpom</module>
+        <module>cactus</module>
         <module>kivakit</module>
         <module>kivakit-extensions</module>
-        <module>kivakit-filesystems</module>
         <module>kivakit-stuff</module>
         <module>kivakit-examples</module>
         <module>mesakit</module>
