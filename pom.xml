@@ -37,16 +37,15 @@
         A bill-of-materials-only project that builds all KivaKit, MesaKit and Lexakai
         projects.
     </description>
+
     <modules>
 
         <module>telenav-superpom</module>
         <module>kivakit</module>
-        <module>cactus</module>
-        <module>lexakai-annotations</module>
         <module>kivakit-extensions</module>
-        <module>kivakit-examples</module>
+        <module>kivakit-filesystems</module>
         <module>kivakit-stuff</module>
-        <module>lexakai</module>
+        <module>kivakit-examples</module>
         <module>mesakit</module>
         <module>mesakit-extensions</module>
         <module>mesakit-examples</module>

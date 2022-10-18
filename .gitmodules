@@ -18,6 +18,10 @@
 	path = kivakit-examples
 	url = https://github.com/Telenav/kivakit-examples.git
 	branch = develop
+[submodule "kivakit-filesystems"]
+	path = kivakit-filesystems
+	url = https://github.com/Telenav/kivakit-filesystems.git
+	branch = develop
 [submodule "lexakai"]
 	path = lexakai
 	url = https://github.com/Telenav/lexakai.git
