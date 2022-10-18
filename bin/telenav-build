@@ -328,7 +328,7 @@ sub parse_arguments
 
 sub kivakit_folders
 {
-    ("$workspace/kivakit", "$workspace/kivakit-extensions", "$workspace/kivakit-stuff", "$workspace/kivakit-examples")
+    ("$workspace/kivakit", "$workspace/kivakit-extensions", "$workspace/kivakit-filesystems", "$workspace/kivakit-stuff", "$workspace/kivakit-examples")
 }
 
 sub mesakit_folders
