@@ -48,9 +48,10 @@ When the checkout and build process completes, you should have a project tree li
             │   ├── kivakit-commandline
             │   └── [...]
             ├── kivakit-assets
-            ├── kivakit-examples
             ├── kivakit-extensions
+            ├── kivakit-filesystems
             ├── kivakit-stuff
+            ├── kivakit-examples
             ├── mesakit <------------------- $MESAKIT_HOME
             ├── mesakit-assets
             ├── mesakit-examples
