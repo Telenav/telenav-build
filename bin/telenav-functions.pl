@@ -24,7 +24,8 @@ sub cactus
 
     my @defaults = (); # ("--quiet");
     push @arguments, @defaults;
-    push @arguments, "-Dcactus.scope=all com.telenav.cactus:cactus-maven-plugin:${\(cactus_version())}:${command}";
+    my $cactus_version = cactus_version();
+    push @arguments, "-Dcactus.scope=all com.telenav.cactus:cactus-maven-plugin:${cactus_version}:${command}";
     push @arguments, "validate";
 
     cd_workspace();
