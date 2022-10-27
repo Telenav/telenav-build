@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#
+#  © 2011-2021 Telenav, Inc.
+#  Licensed under Apache License, Version 2.0
+#
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+source "${TELENAV_WORKSPACE}"/bin/telenav-library-functions
+
+PROJECT_HOME=$(pwd)
+PROJECT_NAME=$(project_name "$PROJECT_HOME")
+PROJECT_VERSION=$(project_version)
+CACTUS_PLUGIN_VERSION=$(cactus_version)
+
+if [ -z "$PROJECT_NAME" ]; then
+    echo "Must be in a project folder to build documentation"
+    exit 1
+fi
+if [ -z "$PROJECT_VERSION" ]; then
+    echo "Must be in a project folder to build documentation"
+    exit 1
+fi
+
+echo "┏━━━━━━━ Building Documentation ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+echo "┋ "
+echo "┋ Cactus: $CACTUS_PLUGIN_VERSION"
+echo "┋ "
+echo "┋ Project: $PROJECT_NAME"
+echo "┋ Version: $PROJECT_VERSION"
+echo "┋ "
+echo "┋ Building Javadoc"
+echo "┋ "
+mvn -Dmaven.test.skip=true -Dcactus.maven.plugin.version="${CACTUS_PLUGIN_VERSION}" -quiet --no-transfer-progress --batch-mode clean javadoc:javadoc javadoc:aggregate
+echo "┋ "
+echo "┋ Building Lexakai Documentation"
+lexakai . -update-readme=true -output-folder="${TELENAV_WORKSPACE}"/"${PROJECT_NAME}"-assets/docs/"${PROJECT_VERSION}"/
+echo "┋ "
+echo "┗━━━━━━━ Done ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
