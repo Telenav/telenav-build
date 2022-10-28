@@ -40,8 +40,10 @@
 
     <modules>
 
+        <module>lexakai-annotations</module>
         <module>cactus</module>
         <module>kivakit</module>
+        <module>lexakai</module>
         <module>kivakit-extensions</module>
         <module>kivakit-examples</module>
         <module>kivakit-stuff</module>
