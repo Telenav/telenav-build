@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles>
+    <profile>
+        <id>release-phase-0</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+        <properties>
+            <maven.test.skip.exec>true</maven.test.skip.exec>
+        </properties>
+        <build>
+            <plugins>
+
+                <plugin>
+                    <groupId>com.telenav.cactus</groupId>
+                    <artifactId>cactus-maven-plugin</artifactId>
+                    <configuration>
+                        <scope>family</scope>
+                        <verbose>true</verbose>
+                        <includeRoot>true</includeRoot>
+                        <tolerateVersionInconsistenciesIn>lexakai</tolerateVersionInconsistenciesIn>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>filter-families-from-plugins-1</id>
+                            <goals>
+                                <goal>filter-families</goal>
+                            </goals>
+                            <configuration>
+                                <familiesRequired>true</familiesRequired>
+                                <properties>
+                                    cactus.generate.lexakai.skip,
+                                    cactus.publish.check.skip,
+                                    maven.javadoc.skip</properties>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>consistency-check</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <configuration>
+                                <checkDirty>false</checkDirty>
+                                <!-- fixme -->
+                                <checkRemoteModifications>false</checkRemoteModifications>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>clone-into-temp</id>
+                            <goals>
+                                <goal>clone</goal>
+                            </goals>
+                            <phase>validate</phase>
+                        </execution>
+
+                        <execution>
+                            <id>print-phase-zero-message</id>
+                            <goals>
+                                <goal>print-message</goal>
+                            </goals>
+                            <phase>install</phase>
+                            <configuration>
+                                <onFailure>false</onFailure>
+                                <message>
+                                    Your origin URL has been cloned to the directory displayed.
+
+                                    Change directories to that to proceed with phase-1:
+
+                                    `mvn \
+                                    \t-P release-phase-1 \
+                                    \t-Denforcer.skip=true \
+                                    \t-Dcactus.expected.branch=develop \
+                                    \t-Dcactus.maven.plugin.version="${CACTUS_VERSION}" \
+                                    \t-Dcactus.families=${FAMILIES_TO_RELEASE} \
+                                    \t-DreleaseBranchPrefix=${RELEASE_BRANCH_PREFIX} \
+                                    \t-Dmaven.test.skip.exec=true \
+                                    \t\tclean \
+                                    \t\tvalidate
+                                    `
+                                </message>
+                            </configuration>
+                        </execution>
+
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+
+    <profile>
+        <id>release-phase-1</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+        <properties>
+            <maven.test.skip.exec>true</maven.test.skip.exec>
+        </properties>
+        <build>
+            <plugins>
+
+                <plugin>
+                    <groupId>com.telenav.cactus</groupId>
+                    <artifactId>cactus-maven-plugin</artifactId>
+                    <version>${cactus.maven.plugin.version}</version>
+                    <configuration>
+                        <scope>family</scope>
+                        <verbose>true</verbose>
+                        <includeRoot>true</includeRoot>
+                        <tolerateVersionInconsistenciesIn>lexakai</tolerateVersionInconsistenciesIn>
+                    </configuration>
+                    <executions>
+
+                        <execution>
+                            <id>filter-families-from-plugins-1</id>
+                            <goals>
+                                <goal>filter-families</goal>
+                            </goals>
+                            <configuration>
+                                <familiesRequired>true</familiesRequired>
+                                <properties>
+                                    cactus.generate.lexakai.skip,
+                                    cactus.publish.check.skip,
+                                    maven.javadoc.skip</properties>
+                            </configuration>
+                        </execution>
+
+                        <!-- pulling this out for now -->
+                        <!--
+                        <execution>
+                            <id>pull-assets-checkouts</id>
+                            <goals>
+                                <goal>update-assets-checkouts</goal>
+                            </goals>
+                            <phase>initialize</phase>
+                            <configuration>
+                                <pull>true</pull>
+                                <commit>true</commit>
+                            </configuration>
+                        </execution>
+                        -->
+
+                        <execution>
+                            <id>consistency-check</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <configuration>
+                                <checkDirty>false</checkDirty>
+                                <!-- fixme -->
+                                <checkRemoteModifications>false</checkRemoteModifications>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>bump-versions-of-families</id>
+                            <goals>
+                                <goal>bump-version</goal>
+                            </goals>
+                            <configuration>
+                                <scope>family</scope>
+                                <bumpPublished>true</bumpPublished>
+                                <commitChanges>true</commitChanges>
+                                <commitMessage>Prepare for release</commitMessage>
+                                <versionFlavor>to-release</versionFlavor>
+                                <createReleaseBranch>true</createReleaseBranch>
+                            </configuration>
+                        </execution>
+
+                        <!-- If we are not actually updating any versions, then the
+                             docs phase of BumpVersionMojo will not run (and it is
+                             off by default now anyway).  So do a pass of docs updates
+                             regardless.
+                        -->
+                        <execution>
+                            <id>ensure-docs-updated</id>
+                            <goals>
+                                <goal>replace</goal>
+                            </goals>
+                            <configuration>
+                                <scope>family</scope>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <goals>
+                                <goal>print-message</goal>
+                            </goals>
+                            <configuration>
+                                <onFailure>false</onFailure>
+                                <message>
+                                    Versions have been bumped and family checkouts are now on a new release branch.
+                                    Review the changes, and when you're ready, rebuild your
+                                    superpoms - e.g.
+
+                                    `mvn -f telenav-superpom/pom.xml install`
+
+                                    and you are ready for phase 2, building documentation:
+
+                                    `mvn -P release-phase-2 clean install \
+                                    \t-Dcactus.families=${FAMILIES_TO_RELEASE} \
+                                    \torg.apache.maven.plugins:maven-site-plugin:4.0.0-M1:site verify`
+
+                                    to build documentation, after which you can review what was built,
+                                    and, if satisfactory, move on to committing it and publishing.
+                                </message>
+                            </configuration>
+                        </execution>
+
+                    </executions>
+                </plugin>
+
+            </plugins>
+        </build>
+    </profile>
+
+    <profile>
+        <id>release-phase-2</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+        <properties>
+            <maven.shade.skip>true</maven.shade.skip>
+        </properties>
+        <build>
+            <plugins>
+
+                <plugin>
+                    <groupId>com.telenav.cactus</groupId>
+                    <artifactId>cactus-maven-plugin</artifactId>
+                    <version>${cactus.maven.plugin.version}</version>
+                    <configuration>
+                        <scope>family</scope>
+                        <verbose>true</verbose>
+                        <includeRoot>true</includeRoot>
+                        <tolerateVersionInconsistenciesIn>lexakai</tolerateVersionInconsistenciesIn>
+                    </configuration>
+
+                    <executions>
+
+                        <execution>
+                            <id>filter-families-from-plugins</id>
+                            <goals>
+                                <goal>filter-families</goal>
+                            </goals>
+                            <configuration>
+                                <familiesRequired>true</familiesRequired>
+                                <properties>
+                                    skipIfEmpty,
+                                    gpg.skip,
+                                    maven.deploy.skip,
+                                    do.not.publish,
+                                    cactus.codeflowers.skip,
+                                    cactus.copy.javadoc.skip,
+                                    cactus.lexakai.skip,
+                                    cactus.generate.lexakai.skip,
+                                    cactus.publish.check.skip,
+                                    maven.javadoc.skip,
+                                    skipNexusStagingDeployMojo
+                                </properties>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <!-- Generate magic lexakai files from data in the pom  -->
+                            <id>generate-lexakai-properties-files</id>
+                            <goals>
+                                <goal>lexakai-generate</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>generate-codeflowers</id>
+                            <goals>
+                                <goal>codeflowers</goal>
+                            </goals>
+                            <phase>install</phase>
+                        </execution>
+
+                        <execution>
+                            <id>generate-lexakai-docs</id>
+                            <goals>
+                                <goal>lexakai</goal>
+                            </goals>
+                            <phase>install</phase>
+                        </execution>
+
+                        <execution>
+                            <id>copy-javadoc-to-assets-dir</id>
+                            <goals>
+                                <goal>copy-javadoc</goal>
+                            </goals>
+                            <phase>verify</phase>
+                        </execution>
+
+                        <execution>
+                            <id>copy-agg-javadoc-to-assets-dir</id>
+                            <goals>
+                                <goal>copy-aggregated-javadoc</goal>
+                            </goals>
+                            <phase>verify</phase>
+                        </execution>
+
+                        <execution>
+                            <id>print-phase-two-message</id>
+                            <goals>
+                                <goal>print-message</goal>
+                            </goals>
+                            <phase>install</phase>
+                            <configuration>
+                                <onFailure>false</onFailure>
+                                <message>
+                                    Documentation has been generated and READMEs have been updated.
+
+                                    REVIEW THE DOCUMENTATION NOW.
+
+                                    When you are happy with the results, run phase 3 to commit the
+                                    changes and prepare the release:
+
+                                    `mvn -P release-phase-3 -Dcactus.families=${FAMILIES_TO_RELEASE} \
+                                    \tdeploy`
+
+                                </message>
+                            </configuration>
+                        </execution>
+
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <executions>
+
+                        <execution>
+                            <id>generate-javadoc</id>
+                            <goals>
+                                <goal>javadoc-no-fork</goal>
+                            </goals>
+                            <phase>prepare-package</phase>
+                        </execution>
+
+                        <execution>
+                            <id>generate-aggregate-javadoc</id>
+                            <goals>
+                                <goal>aggregate-no-fork</goal>
+                            </goals>
+                            <phase>prepare-package</phase>
+                        </execution>
+
+                    </executions>
+                </plugin>
+
+                <!-- Some javadoc won't be (and cannot be if it uses the shade plugin
+                to clobber module-info.class files) rebuilt, so we night to
+                sign NOW in addition to including the plugin in the next phase -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven-gpg-plugin.version}</version>
+                    <executions>
+
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>install</phase>
+                            <configuration>
+                                <gpgArguments>
+                                    <arg>--pinentry-mode</arg>
+                                    <arg>loopback</arg>
+                                </gpgArguments>
+                            </configuration>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+            </plugins>
+        </build>
+    </profile>
+
+    <profile>
+        <id>release-phase-3</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+        <properties>
+            <releasePush>false</releasePush>
+        </properties>
+        <build>
+            <plugins>
+
+                <plugin>
+                    <groupId>com.telenav.cactus</groupId>
+                    <artifactId>cactus-maven-plugin</artifactId>
+                    <version>${cactus.maven.plugin.version}</version>
+                    <configuration>
+                        <scope>family</scope>
+                        <verbose>true</verbose>
+                        <includeRoot>true</includeRoot>
+                        <tolerateVersionInconsistenciesIn>lexakai</tolerateVersionInconsistenciesIn>
+                    </configuration>
+                    <executions>
+
+                        <execution>
+                            <id>filter-families-from-plugins-3</id>
+                            <goals>
+                                <goal>filter-families</goal>
+                            </goals>
+                            <configuration>
+                                <familiesRequired>true</familiesRequired>
+                                <properties>
+                                    skipIfEmpty,
+                                    maven.deploy.skip,
+                                    cactus.codeflowers.skip,
+                                    cactus.copy.javadoc.skip,
+                                    cactus.lexakai.skip,
+                                    cactus.generate.lexakai.skip,
+                                    cactus.publish.check.skip,
+                                    maven.javadoc.skip,
+                                    do.not.publish,
+                                    skipNexusStagingDeployMojo,
+                                    gpg.skip
+                                </properties>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <!-- Ensure we don't try to publish a pom that
+                            was already published and is identical to the
+                            published one. -->
+                            <id>filter-already-published-identical-poms</id>
+                            <goals>
+                                <goal>filter-published</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>commit-doc-changes</id>
+                            <goals>
+                                <goal>commit</goal>
+                            </goals>
+                            <phase>validate</phase>
+                            <configuration>
+                                <push>${releasePush}</push>
+                                <scope>all-project-families</scope>
+                                <commitChanges>true</commitChanges>
+                                <includeRoot>true</includeRoot>
+                                <commitMessage>Commit docs for release</commitMessage>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>commit-asset-changes</id>
+                            <goals>
+                                <goal>commit-assets</goal>
+                            </goals>
+                            <phase>validate</phase>
+                            <configuration>
+                                <push>${releasePush}</push>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>check-already-published-version</id>
+                            <goals>
+                                <goal>check-published</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>copy-javadoc-to-assets</id>
+                            <goals>
+                                <goal>copy-aggregated-javadoc</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>update-metadata-post-commit</id>
+                            <goals>
+                                <goal>build-metadata</goal>
+                            </goals>
+                        </execution>
+
+                        <execution>
+                            <id>print-phase-three-message</id>
+                            <goals>
+                                <goal>print-message</goal>
+                            </goals>
+                            <phase>deploy</phase>
+                            <configuration>
+                                <onFailure>false</onFailure>
+                                <message>
+                                    Documentation changes have been commited, and
+                                    perhaps pushed? (${releasePush})
+
+                                    Artifacts have been uploaded to nexus.  Review,
+                                    and release the repository
+                                    if things look right.
+
+                                    The next phase will merge your changes back to the
+                                    development branch, and move all released families
+                                    onto a new snapshot version.
+                                </message>
+                            </configuration>
+                        </execution>
+
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>generate-javadoc</id>
+                            <goals>
+                                <goal>javadoc-no-fork</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>generate-aggregate-javadoc</id>
+                            <goals>
+                                <goal>aggregate-no-fork</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>generate-javadoc-jar</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>generate-source-jar</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${maven-gpg-plugin.version}</version>
+                    <executions>
+
+                        <execution>
+
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <configuration>
+                                <gpgArguments>
+                                    <arg>--pinentry-mode</arg>
+                                    <arg>loopback</arg>
+                                </gpgArguments>
+                            </configuration>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>${nexus-staging-maven-plugin.version}</version>
+                    <configuration>
+                        <skipLocalStaging>true</skipLocalStaging>
+                        <skipStaging>${do.not.publish}</skipStaging>
+                        <autoReleaseAfterClose>${release.on.close}</autoReleaseAfterClose>
+                        <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
+                    </configuration>
+
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>deploy</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+
+                </plugin>
+
+            </plugins>
+        </build>
+    </profile>
+
+    <profile>
+        <id>release-phase-4</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>com.telenav.cactus</groupId>
+                    <artifactId>cactus-maven-plugin</artifactId>
+                    <version>${cactus.maven.plugin.version}</version>
+                    <configuration>
+                        <scope>family</scope>
+                        <verbose>true</verbose>
+                        <tolerateVersionInconsistenciesIn>lexakai</tolerateVersionInconsistenciesIn>
+                        <push>${releasePush}</push>
+                        <commitChanges>true</commitChanges>
+                        <includeRoot>true</includeRoot>
+                        <commitMessage>Commit docs for release</commitMessage>
+                    </configuration>
+                    <executions>
+
+                        <execution>
+                            <id>filter-families-from-plugins-4</id>
+                            <goals>
+                                <goal>filter-families</goal>
+                            </goals>
+                            <configuration>
+                                <familiesRequired>true</familiesRequired>
+                                <properties>skipIfEmpty,cactus.publish.check.skip,cactus.check.skip</properties>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>merge-release-into-develop</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>merge</goal>
+                            </goals>
+                            <configuration>
+                                <alsoMergeInto>release/current</alsoMergeInto>
+                                <tag>true</tag>
+                                <includeRoot>true</includeRoot>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>move-to-new-snapshot-version</id>
+                            <goals>
+                                <goal>bump-version</goal>
+                            </goals>
+                            <phase>generate-sources</phase>
+                            <configuration>
+                                <commitChanges>true</commitChanges>
+                                <scope>family</scope>
+                                <includeRoot>true</includeRoot>
+                                <versionFlavor>to-snapshot</versionFlavor>
+                                <updateDocs>false</updateDocs>
+                                <superpomBumpPolicy>BUMP_ACQUIRING_NEW_FAMILY_FLAVOR</superpomBumpPolicy>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>commit-new-snapshots</id>
+                            <goals>
+                                <goal>commit</goal>
+                            </goals>
+                            <phase>generate-resources</phase>
+                            <configuration>
+                                <commitMessage>Update to new snapshot version</commitMessage>
+                                <scope>all</scope>
+                                <includeRoot>true</includeRoot>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>push-new-snapshots</id>
+                            <goals>
+                                <goal>push</goal>
+                            </goals>
+                            <phase>process-resources</phase>
+                            <configuration>
+                                <pushAll>true</pushAll>
+                            </configuration>
+                        </execution>
+
+                        <execution>
+                            <id>phase-4-message</id>
+                            <goals>
+                                <goal>print-message</goal>
+                            </goals>
+                            <phase>generate-sources</phase>
+                            <configuration>
+                                <onFailure>false</onFailure>
+                                <message>
+                                    You are now back on the development branch, with
+                                    new snapshot versions of everything that was published
+                                    locally and pushed (${releasePush}) to the git server.
+
+                                    Congratulations!  You released ${cactus.families}
+                                    in ${project.basedir}!
+                                </message>
+                            </configuration>
+                        </execution>
+
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+
+</profiles>
