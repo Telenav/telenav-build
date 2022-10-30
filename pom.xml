@@ -41,6 +41,7 @@
     <modules>
 
         <module>lexakai-annotations</module>
+        <module>cactus-metadata</module>
         <module>cactus</module>
         <module>kivakit</module>
         <module>lexakai</module>
