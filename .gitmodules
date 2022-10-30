@@ -58,3 +58,6 @@
 	path = cactus-assets
 	url = https://github.com/Telenav/cactus-assets.git
 	branch = publish
+[submodule "cactus-metadata"]
+	path = cactus-metadata
+	url = https://github.com/timboudreau/cactus-metadata.git

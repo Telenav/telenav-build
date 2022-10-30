@@ -40,15 +40,18 @@
 
     <modules>
 
-        <module>telenav-superpom</module>
+        <module>lexakai-annotations</module>
+        <module>cactus-metadata</module>
         <module>cactus</module>
         <module>kivakit</module>
+        <module>lexakai</module>
         <module>kivakit-extensions</module>
-        <module>kivakit-stuff</module>
         <module>kivakit-examples</module>
+        <module>kivakit-stuff</module>
         <module>mesakit</module>
-        <module>mesakit-extensions</module>
         <module>mesakit-examples</module>
+        <module>mesakit-extensions</module>
+        <module>telenav-superpom</module>
 
     </modules>
     
