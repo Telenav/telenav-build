@@ -32,7 +32,6 @@
 
     <packaging>pom</packaging>
 
-    <name>telenav-build</name>
     <description>
         A bill-of-materials-only project that builds all KivaKit, MesaKit and Lexakai
         projects.
