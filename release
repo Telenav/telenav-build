@@ -146,7 +146,7 @@ echo "┋ Releasing families: $PROJECT_FAMILIES"
 echo "┋ Changing MAJOR revision for [ $MAJOR_REVISION_FAMILIES ]"
 echo "┋ Changing MINOR revision for [ $MINOR_REVISION_FAMILIES ]"
 echo "┋ Changing DOT revision for [ $DOT_REVISION_FAMILIES ]"
-echo "┋ Using current version (less any -SNAPSHOT suffix) for [ $NONE_REVISION_FAMILIES ]"
+echo "┋ Using current version for [ $NONE_REVISION_FAMILIES ]"
 echo "┋"
 
 read -r -p "┋ Does that look correct (yes/no)? [no] "
