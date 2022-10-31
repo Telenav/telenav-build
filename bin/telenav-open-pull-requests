@@ -20,8 +20,12 @@ if (!defined $ENV{"CACTUS_GITHUB_PERSONAL_ACCESS_TOKEN"})
 
 my $branch_name = get_argument("Branch name? ");
 
+announce("Opening pull requests for branch '${branch_name}'");
+
 cactus("show-prs",
     "-Dcactus.target-branch=\"$branch_name\"",
     "-Dcactus.include-root=true",
     "-Dcactus.scope=all",
     "-Dcactus.authentication-token=\"$ENV{CACTUS_GITHUB_PERSONAL_ACCESS_TOKEN}\"");
+
+announce("Opened pull requests for branch '${branch_name}'");

@@ -22,7 +22,7 @@ sub cactus
     my $command = shift @_;
     my @arguments = (@_);
 
-    my @defaults = (); # ("--quiet");
+    my @defaults = ("--quiet");
     push @arguments, @defaults;
     my $cactus_version = cactus_version();
     push @arguments, "-Dcactus.scope=all com.telenav.cactus:cactus-maven-plugin:${cactus_version}:${command}";
@@ -108,7 +108,7 @@ sub maven_array
     my $exit_code = 0;
     if (defined $build_dry_run && $build_dry_run eq 1)
     {
-        say_it("Execute: $command");
+        announce("Execute: $command");
     }
     else
     {
@@ -132,7 +132,7 @@ The last maven log is always $temporary_folder/maven-last.log
     }
 }
 
-sub say_it
+sub announce
 {
     my ($text) = @_;
     println("┋ $text");
@@ -167,7 +167,7 @@ sub require_variable
     }
 }
 
-sub say_it_block
+sub say_block
 {
     my ($text) = @_;
     print "\n$text\n\n";

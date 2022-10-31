@@ -13,6 +13,8 @@ use warnings;
 
 require "$ENV{'TELENAV_WORKSPACE'}/bin/telenav-functions.pl";
 
+announce("Pulling");
+
 cactus("pull");
 
-println("Pulled");
+announce("Pulled");

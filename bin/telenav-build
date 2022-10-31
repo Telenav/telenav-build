@@ -58,32 +58,32 @@ sub build
 
     chdir $workspace;
 
-    say_it("");
+    announce("");
 
     if ($build_clean_script ne "")
     {
-        say_it("Cleaning with $build_clean_script");
+        announce("Cleaning with $build_clean_script");
         if (!is_dry_run())
         {
             system($build_clean_script);
         }
-        say_it("Cleaned")
+        announce("Cleaned")
     }
 
-    say_it("Installing superpoms");
+    announce("Installing superpoms");
     my $install_output = maven("--quiet", "-f", "telenav-superpom/pom.xml", "clean", "install");
     if ($? != 0)
     {
         fail("Unable to install superpoms:\n\n$install_output\n");
     }
-    say_it("Superpoms installed");
+    announce("Superpoms installed");
 
-    say_it("Building");
+    announce("Building");
     for my $folder (@build_folders)
     {
         chdir $folder || die;
         my $project = basename("$folder");
-        say_it("Building project $project");
+        announce("Building project $project");
         my @maven_parameters=(@maven_switches, @maven_arguments);
         my $build_output = maven_array(\@maven_parameters);
         if ($? != 0)
@@ -91,7 +91,7 @@ sub build
             fail("Build failed:\n\n$build_output\n");
         }
     }
-    say_it("Done building");
+    announce("Done building");
 
     show_end_build();
 }
@@ -114,8 +114,8 @@ sub check_tools
         }
         else
         {
-            say_it("");
-            say_it("                 Tools: Java $java_version");
+            announce("");
+            announce("                 Tools: Java $java_version");
         }
     }
     else
@@ -137,7 +137,7 @@ sub check_tools
         }
         else
         {
-            say_it("                        Git $git_version");
+            announce("                        Git $git_version");
         }
     }
     else
@@ -159,7 +159,7 @@ sub check_tools
         }
         else
         {
-            say_it("                        Maven $maven_version");
+            announce("                        Maven $maven_version");
         }
     }
     else
@@ -427,7 +427,7 @@ sub usage
     my ($problem) = @_;
     if (defined $problem && $problem ne "")
     {
-        say_it_block($problem);
+        say_block($problem);
     }
 
     print q#

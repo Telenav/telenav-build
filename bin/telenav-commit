@@ -20,8 +20,10 @@ if (!defined $message)
     fail_with_usage("[message]");
 }
 
+announce("Committing changes");
+
 cactus("commit",
        "-Dcactus.commit-message=\"$message\"",
        "-Dcactus.update-root=true");
 
-println("Changes committed");
+announce("Changes committed");
