@@ -64,4 +64,4 @@
         shallow = true
 [submodule "cactus-metadata"]
 	path = cactus-metadata
-	url = https://github.com/timboudreau/cactus-metadata.git
+	url = https://github.com/Telenav/cactus-metadata.git
