@@ -46,15 +46,23 @@
 	path = mesakit-assets
 	url = https://github.com/Telenav/mesakit-assets.git
 	branch = publish
+        shallow = true
 [submodule "lexakai-assets"]
 	path = lexakai-assets
 	url = https://github.com/Telenav/lexakai-assets.git
 	branch = publish
+        shallow = true
 [submodule "kivakit-assets"]
 	path = kivakit-assets
 	url = https://github.com/Telenav/kivakit-assets.git
 	branch = publish
+        shallow = true
 [submodule "cactus-assets"]
 	path = cactus-assets
 	url = https://github.com/Telenav/cactus-assets.git
 	branch = publish
+        shallow = true
+[submodule "cactus-metadata"]
+	path = cactus-metadata
+	url = https://github.com/Telenav/cactus-metadata.git
+        branch = develop
