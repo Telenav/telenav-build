@@ -65,3 +65,5 @@
 [submodule "cactus-metadata"]
 	path = cactus-metadata
 	url = https://github.com/Telenav/cactus-metadata.git
+        branch = develop
+
