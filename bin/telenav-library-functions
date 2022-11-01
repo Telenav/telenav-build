@@ -234,9 +234,9 @@ check_tools()
 git_repository_initialize()
 {
     echo "Git pull fast-forward"
-    git config pull.ff false || exit 1
+    git config pull.ff true || exit 1
     # shellcheck disable=SC2016
-    git submodule foreach 'git config pull.ff false && echo "Configuring $name"' || exit 1
+    git submodule foreach 'git config pull.ff true && echo "Configuring $name"' || exit 1
 }
 
 git_branch_name()
