@@ -104,7 +104,7 @@ sub maven_array
     my $log_file = sprintf("${temporary_folder}/maven-$weekday-$year.%02d.%02d-$hour.%02d-%s.log", $mon, $mday, $min, basename($0));
 
     my $arguments = join(" ", @arguments);
-    my $command = "mvn -Dorg.slf4j.simpleLogger.logFile=\"${log_file}\" -Dorg.slf4j.simpleLogger.defaultLogLevel=\"${log_level}\" -Dorg.slf4j.simpleLogger.cacheOutputStream=false $arguments 2>&1";
+    my $command = "mvn -DKIVAKIT_DEBUG=\"!Debug\" -Dorg.slf4j.simpleLogger.logFile=\"${log_file}\" -Dorg.slf4j.simpleLogger.defaultLogLevel=\"${log_level}\" -Dorg.slf4j.simpleLogger.cacheOutputStream=false $arguments 2>&1";
     my $exit_code = 0;
     if (defined $build_dry_run && $build_dry_run eq 1)
     {
