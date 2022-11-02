@@ -475,6 +475,8 @@ maven $QUIET --no-transfer-progress --batch-mode \
     -P release-phase-4 \
     -Dcactus.maven.plugin.version="${CACTUS_PLUGIN_VERSION}" \
     -Dcactus.families="${PROJECT_FAMILIES}" \
+    -Dcactus.version.flavor.change=to-release \
+    -Dcactus.dot.bump.families="${NONE_REVISION_FAMILIES},${DOT_REVISION_FAMILIES}" \
     -Dmaven.test.skip=true \
         clean generate-resources || exit 11
 
