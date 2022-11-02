@@ -491,9 +491,11 @@ echo "┗━━━━━━━ PHASE 4 ━━━━━━━━━━━━━�
 echo "┏━━━━━━━ PHASE 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
 echo "┋ Updating local checkout from release checkout "
 
-cd ${ORIGINAL_WORKSPACE}
-git submodule foreach --recursive git pull ${TEMPORARY_WORKSPACE}/${name}
-git pull ${TEMPORARY_WORKSPACE}
+# cd ${ORIGINAL_WORKSPACE}
+# git submodule foreach --recursive git pull ${TEMPORARY_WORKSPACE}/${name}
+# git pull ${TEMPORARY_WORKSPACE}
+
+echo Phase 5 omitted until other phases are solid again.
 
 echo "┗━━━━━━━ PHASE 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
 
