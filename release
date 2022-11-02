@@ -329,7 +329,7 @@ maven $QUIET --no-transfer-progress --batch-mode \
     -Dcactus.version.flavor.change=to-release \
     -Dcactus.release.branch.prefix=${RELEASE_BRANCH_PREFIX} \
     -Dmaven.test.skip=true com.telenav.cactus:cactus-maven-plugin:${CACTUS_PLUGIN_VERSION}:bump-version || exit 4
-        
+
 
 ##############################################################################
 # Rebuild everything with tests now that some things have new versions
@@ -455,11 +455,9 @@ maven $QUIET --no-transfer-progress --batch-mode \
         install \
         verify \
         gpg:sign \
-        deploy || exit 10
-        
+        org.sonatype.plugins:nexus-staging-maven-plugin:1.6.13:deploy || exit 10
 
 echo "┗━━━━━━━ PHASE 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
-
 
 
 ##############################################################################
