@@ -21,7 +21,11 @@ if (!defined $ENV{"CACTUS_GITHUB_PERSONAL_ACCESS_TOKEN"})
 my $branch_name = get_argument("Branch name? ");
 my $body = console_input("Approval body? ");
 
+announce("Approving pull request for branch '${branch_name}'");
+
 cactus("git-approve-pull-request",
     "-Dcactus.authentication-token=\"$ENV{CACTUS_GITHUB_PERSONAL_ACCESS_TOKEN}\"",
     "-Dcactus.pr.branch-to-approve=\"$branch_name\"",
-    ""-Dcactus.pr.body=\"$body\"");
+    "-Dcactus.pr.body=\"$body\"");
+
+announce("Approved pull request for branch '${branch_name}'");

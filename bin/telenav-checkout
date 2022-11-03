@@ -20,6 +20,8 @@ if (!defined $branch_name)
     fail_with_usage("[branch-name]");
 }
 
+announce("Switching to branch ${branch_name}");
+
 cactus("checkout",
     "-Dcactus.fetch-first=true",
     "-Dcactus.base-branch=develop",
@@ -30,4 +32,4 @@ cactus("checkout",
     "-Dcactus.push=false",
     "-Dcactus.permit-local-changes=true");
 
-println("Checked out branch ${branch_name}");
+announce("Switched to branch ${branch_name}");

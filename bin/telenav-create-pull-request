@@ -23,6 +23,8 @@ my $branch_name = get_argument("Branch name? ");
 my $title = console_input("Title? ");
 my $body = console_input("Body? ");
 
+announce("Creating Github pull request for ${branch_name}");
+
 cactus("git-pull-request",
     "-Dcactus.authentication-token=\"$ENV{CACTUS_GITHUB_PERSONAL_ACCESS_TOKEN}\"",
     "-Dcactus.title=\"$title\"",
@@ -31,4 +33,4 @@ cactus("git-pull-request",
     "-Dcactus.body=\"${body}\"",
     "-Dcactus.reviewers=\"rodherz,sunshine-syz,timboudreau,wenjuanj,jonathanl-telenav,haifeng-z\"");
 
-println("Pull request created for ${branch_name}");
+announce("Created Github pull request for ${branch_name}");

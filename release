@@ -145,8 +145,8 @@ echo "┋"
 echo "┋ Releasing families: $PROJECT_FAMILIES"
 echo "┋ Changing MAJOR revision for [ $MAJOR_REVISION_FAMILIES ]"
 echo "┋ Changing MINOR revision for [ $MINOR_REVISION_FAMILIES ]"
-echo "┋ Changing MAJOR revision for [ $DOT_REVISION_FAMILIES ]"
-echo "┋ Using current version (less any -SNAPSHOT suffix) for [ $NONE_REVISION_FAMILIES ]"
+echo "┋ Changing DOT revision for [ $DOT_REVISION_FAMILIES ]"
+echo "┋ Using current version for [ $NONE_REVISION_FAMILIES ]"
 echo "┋"
 
 read -r -p "┋ Does that look correct (yes/no)? [no] "
@@ -280,17 +280,6 @@ maven $QUIET --no-transfer-progress --batch-mode \
     -Dcactus.maven.plugin.version="${CACTUS_PLUGIN_VERSION}" \
     -f telenav-superpom/pom.xml \
         clean install || exit 1
-        
-# Temporary hack until we untangle warring DefaultArtifact classes
-# from Maven's two versions of its artifact API in Lexakai mojo.
-# Just gets it installed ahead of anything trying to use it.
-# echo "┋ Installing lexakai 1.0.13"
-
-# shellcheck disable=SC2086
-# maven $QUIET --no-transfer-progress --batch-mode \
-#    org.apache.maven.plugins:maven-dependency-plugin:3.3.0:get \
-#    -Dartifact=com.telenav.lexakai:lexakai:1.0.13:jar:app || exit 2
-
 
 echo '┋ Checking build (no tests)'
 
@@ -316,7 +305,7 @@ echo "┋ Updating versions and branch references"
 echo "┋ Changing MAJOR revision for [ $MAJOR_REVISION_FAMILIES ]"
 echo "┋ Changing MINOR revision for [ $MINOR_REVISION_FAMILIES ]"
 echo "┋ Changing MAJOR revision for [ $DOT_REVISION_FAMILIES ]"
-echo "┋ Using current version (less any -SNAPSHOT suffix) for [ $NONE_REVISION_FAMILIES ]"
+echo "┋ Using current version for [ $NONE_REVISION_FAMILIES ]"
 
 # Deleteme:  temporary debug stuff
 echo "Phase 1 Maven Command-line:"
@@ -340,7 +329,7 @@ maven $QUIET --no-transfer-progress --batch-mode \
     -Dcactus.version.flavor.change=to-release \
     -Dcactus.release.branch.prefix=${RELEASE_BRANCH_PREFIX} \
     -Dmaven.test.skip=true com.telenav.cactus:cactus-maven-plugin:${CACTUS_PLUGIN_VERSION}:bump-version || exit 4
-        
+
 
 ##############################################################################
 # Rebuild everything with tests now that some things have new versions
@@ -400,6 +389,7 @@ maven $QUIET --no-transfer-progress --batch-mode \
     -Dcactus.maven.plugin.version=${CACTUS_PLUGIN_VERSION} \
     -Dcactus.families=${PROJECT_FAMILIES} \
     -Dcactus.release.branch.prefix=${RELEASE_BRANCH_PREFIX} \
+    -Dcactus.lexakai-version=1.0.18 \
     -Dmaven.test.skip=true \
     -DreleasePush=$PUBLISH_RELEASE \
     -Dcactus.push=$PUBLISH_RELEASE \
@@ -457,6 +447,8 @@ echo "┋ Publishing release..."
 maven $QUIET --no-transfer-progress --batch-mode \
     -P release-phase-3 \
     -Dcactus.verb=Publishing \
+    -DnexusUrl=https://s01.oss.sonatype.org/ \
+    -DserverId=ossrh \
     -Dcactus.maven.plugin.version="${CACTUS_PLUGIN_VERSION}" \
     -P ${GPG_PROFILE} \
     -Dcactus.families="${PROJECT_FAMILIES}" \
@@ -465,11 +457,9 @@ maven $QUIET --no-transfer-progress --batch-mode \
         install \
         verify \
         gpg:sign \
-        deploy || exit 10
-        
+        org.sonatype.plugins:nexus-staging-maven-plugin:1.6.13:deploy || exit 10
 
 echo "┗━━━━━━━ PHASE 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
-
 
 
 ##############################################################################
@@ -483,8 +473,11 @@ echo "┋ Merging release and updating to next snapshot version..."
 # shellcheck disable=SC2086
 maven $QUIET --no-transfer-progress --batch-mode \
     -P release-phase-4 \
+    -Dcactus.merge.clobber=true \
     -Dcactus.maven.plugin.version="${CACTUS_PLUGIN_VERSION}" \
     -Dcactus.families="${PROJECT_FAMILIES}" \
+    -Dcactus.version.flavor.change=to-release \
+    -Dcactus.dot.bump.families="${NONE_REVISION_FAMILIES},${DOT_REVISION_FAMILIES}" \
     -Dmaven.test.skip=true \
         clean generate-resources || exit 11
 
@@ -499,9 +492,11 @@ echo "┗━━━━━━━ PHASE 4 ━━━━━━━━━━━━━�
 echo "┏━━━━━━━ PHASE 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
 echo "┋ Updating local checkout from release checkout "
 
-cd ${ORIGINAL_WORKSPACE}
-git submodule foreach --recursive git pull ${TEMPORARY_WORKSPACE}/${name}
-git pull ${TEMPORARY_WORKSPACE}
+# cd ${ORIGINAL_WORKSPACE}
+# git submodule foreach --recursive git pull ${TEMPORARY_WORKSPACE}/${name}
+# git pull ${TEMPORARY_WORKSPACE}
+
+echo Phase 5 omitted until other phases are solid again.
 
 echo "┗━━━━━━━ PHASE 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
 

@@ -22,9 +22,10 @@ sub cactus
     my $command = shift @_;
     my @arguments = (@_);
 
-    my @defaults = (); # ("--quiet");
+    my @defaults = ("--quiet");
     push @arguments, @defaults;
-    push @arguments, "-Dcactus.scope=all com.telenav.cactus:cactus-maven-plugin:${\(cactus_version())}:${command}";
+    my $cactus_version = cactus_version();
+    push @arguments, "-Dcactus.scope=all com.telenav.cactus:cactus-maven-plugin:${cactus_version}:${command}";
     push @arguments, "validate";
 
     cd_workspace();
@@ -103,11 +104,11 @@ sub maven_array
     my $log_file = sprintf("${temporary_folder}/maven-$weekday-$year.%02d.%02d-$hour.%02d-%s.log", $mon, $mday, $min, basename($0));
 
     my $arguments = join(" ", @arguments);
-    my $command = "mvn -Dorg.slf4j.simpleLogger.logFile=\"${log_file}\" -Dorg.slf4j.simpleLogger.defaultLogLevel=\"${log_level}\" -Dorg.slf4j.simpleLogger.cacheOutputStream=false $arguments 2>&1";
+    my $command = "mvn -DKIVAKIT_DEBUG=\"!Debug\" -Dorg.slf4j.simpleLogger.logFile=\"${log_file}\" -Dorg.slf4j.simpleLogger.defaultLogLevel=\"${log_level}\" -Dorg.slf4j.simpleLogger.cacheOutputStream=false $arguments 2>&1";
     my $exit_code = 0;
     if (defined $build_dry_run && $build_dry_run eq 1)
     {
-        say_it("Execute: $command");
+        announce("Execute: $command");
     }
     else
     {
@@ -131,7 +132,7 @@ The last maven log is always $temporary_folder/maven-last.log
     }
 }
 
-sub say_it
+sub announce
 {
     my ($text) = @_;
     println("┋ $text");
@@ -166,7 +167,7 @@ sub require_variable
     }
 }
 
-sub say_it_block
+sub say_block
 {
     my ($text) = @_;
     print "\n$text\n\n";
