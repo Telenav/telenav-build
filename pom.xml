@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -26,161 +27,34 @@
        that breaking something.
     -->
 
-    <groupId>com.telenav</groupId>
-    <artifactId>telenav-build</artifactId>
-    <version>2.0.3</version>
+    <groupId>com.telenav.telenav</groupId>
+    <artifactId>telenav-build-parent</artifactId>
+    <version>1.1.0</version>
 
     <packaging>pom</packaging>
 
-    <description>
-        A bill-of-materials-only project that builds all KivaKit, MesaKit and Lexakai
-        projects.
-    </description>
+    <name>telenav-build-parent</name>
+
+    <description>Build file for the telenav-build workspace that builds KivaKit, MesaKit, and Lexakai</description>
 
     <modules>
-
         <module>lexakai-annotations</module>
-        <module>cactus-metadata</module>
-        <module>cactus</module>
         <module>kivakit</module>
-        <module>lexakai</module>
+        <module>kivakit-stuff</module>
         <module>kivakit-extensions</module>
         <module>kivakit-examples</module>
-        <module>kivakit-stuff</module>
+        <module>lexakai</module>
         <module>mesakit</module>
-        <module>mesakit-examples</module>
         <module>mesakit-extensions</module>
-        <module>telenav-superpom</module>
-
+        <module>mesakit-examples</module>
     </modules>
     
     <properties>
-        <!-- We need to skip building javadoc for the root
-             bill-of-materials ITSELF, because we do not want
-             aggregation at this level and because it will fail. -->
-        <maven.javadoc.skip>true</maven.javadoc.skip>
-        <maven.plugin.plugin.version>3.6.4</maven.plugin.plugin.version>
 
-        <!-- We cannot build lexakai docs for the root project -->
-        <cactus.lexakai.skip>true</cactus.lexakai.skip>
+        <!-- We don't build documentation for this parent project -->
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+
     </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <!-- Javadoc hackery - when building everything,
-                our javadoc config comes from here, not from the
-                parent or project pom. -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.4.0</version>
-                <configuration>
-                    <!-- add-reads is an experimental javadoc option -->
-                    <additionalOptions>
-                        --limit-modules kivakit.web.wicket
-                        --add-reads org.apiguardian.api=ALL-UNNAMED
-                    </additionalOptions>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.3.0</version>
-                <configuration>
-                    <skip>${maven.shade.skip}</skip>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-plugin-plugin</artifactId>
-                <version>${maven.plugin.plugin.version}</version>
-            </plugin>
-
-        </plugins>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>4.0.0-M1</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
-
-    <!-- Licensing -->
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <!-- Source Code -->
-
-    <scm>
-        <connection>scm:git:https://Telenav/kivakit.git</connection>
-        <developerConnection>scm:git:https://Telenav/kivakit.git</developerConnection>
-        <url>https://Telenav/kivakit.git</url>
-    </scm>
-
-    <url>https://www.telenav.com/</url>
-
-    <inceptionYear>2011</inceptionYear>
-
-    <organization>
-        <name>Telenav</name>
-        <url>https://www.telenav.com</url>
-    </organization>
-
-    <!-- Contributors -->
-
-    <developers>
-
-        <developer>
-
-            <id>jonathanl</id>
-            <name>Jonathan Locke (Luo Shibo)</name>
-            <email>jonathanl@telenav.com</email>
-            <organization>Telenav</organization>
-            <organizationUrl>https://www.telenav.com/</organizationUrl>
-            <roles>
-                <role>lead</role>
-                <role>administrator</role>
-            </roles>
-
-        </developer>
-
-        <developer>
-
-            <id>haifeng</id>
-            <name>Haifeng Zhu</name>
-            <email>hfzhu@telenav.com</email>
-            <organization>Telenav</organization>
-            <organizationUrl>https://www.telenav.com/</organizationUrl>
-            <roles>
-                <role>developer</role>
-                <role>administrator</role>
-            </roles>
-
-        </developer>
-
-        <developer>
-
-            <id>timboudreau</id>
-            <name>Tim Boudreau</name>
-            <email>tim@timboudreau.com</email>
-            <organization>Telenav</organization>
-            <organizationUrl>https://www.telenav.com/</organizationUrl>
-            <roles>
-                <role>developer</role>
-                <role>administrator</role>
-            </roles>
-
-        </developer>
-
-    </developers>
 
 </project>
