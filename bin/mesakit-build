@@ -7,6 +7,11 @@
 #
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-bash telenav-clean
+cd "$TELENAV_WORKSPACE/mesakit" || exit
+mvn clean install
 
-rm -rf ~/.m2/repository
+cd "$TELENAV_WORKSPACE/mesakit-extensions" || exit
+mvn clean install
+
+cd "$TELENAV_WORKSPACE/mesakit-examples" || exit
+mvn clean install

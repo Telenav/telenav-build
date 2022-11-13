@@ -7,12 +7,15 @@
 #
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-source telenav-library-functions
+cd "$TELENAV_WORKSPACE/kivakit" || exit
+mvn clean install
 
-if yes_no "HARD RESET workspace $TELENAV_WORKSPACE to origin/develop (all changes will be lost)? "; then
+cd "$TELENAV_WORKSPACE/kivakit-extensions" || exit
+mvn clean install
 
-    git submodule foreach git reset --hard origin/develop
-    git submodule foreach git clean -f -d
-    git reset --hard origin/develop && git clean -f -d
+cd "$TELENAV_WORKSPACE/kivakit-stuff" || exit
+mvn clean install
 
-fi
+cd "$TELENAV_WORKSPACE/kivakit-examples" || exit
+mvn clean install
+

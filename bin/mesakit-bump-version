@@ -7,6 +7,13 @@
 #
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-bash telenav-clean
+cd "$TELENAV_WORKSPACE/mesakit" || exit
+telenav-bump-version
 
-rm -rf ~/.m2/repository
+cd "$TELENAV_WORKSPACE/mesakit-extensions" || exit
+telenav-bump-version
+
+cd "$TELENAV_WORKSPACE/mesakit-examples" || exit
+telenav-bump-version
+
+

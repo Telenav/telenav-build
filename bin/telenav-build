@@ -70,14 +70,6 @@ sub build
         announce("Cleaned")
     }
 
-    announce("Installing superpoms");
-    my $install_output = maven("--quiet", "-f", "telenav-superpom/pom.xml", "clean", "install");
-    if ($? != 0)
-    {
-        fail("Unable to install superpoms:\n\n$install_output\n");
-    }
-    announce("Superpoms installed");
-
     announce("Building");
     for my $folder (@build_folders)
     {

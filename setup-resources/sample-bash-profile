@@ -16,6 +16,7 @@
 
 export TELENAV_WORKSPACE=$HOME/Workspaces/telenav-build
 export CACTUS_GITHUB_PERSONAL_ACCESS_TOKEN=[personal-access-token]
+#export KIVAKIT_LOG_FORMATTER=wide
 
 #
 # Required tools (Java and Maven)

@@ -7,6 +7,11 @@
 #
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-bash telenav-clean
+cd "$TELENAV_WORKSPACE/kivakit" || exit
+./release
 
-rm -rf ~/.m2/repository
+cd "$TELENAV_WORKSPACE/kivakit-extensions" || exit
+./release
+
+cd "$TELENAV_WORKSPACE/kivakit-stuff" || exit
+./release

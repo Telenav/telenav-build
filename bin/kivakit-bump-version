@@ -7,6 +7,16 @@
 #
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-bash telenav-clean
+cd "$TELENAV_WORKSPACE/kivakit" || exit
+telenav-bump-version
 
-rm -rf ~/.m2/repository
+cd "$TELENAV_WORKSPACE/kivakit-extensions" || exit
+telenav-bump-version
+
+cd "$TELENAV_WORKSPACE/kivakit-stuff" || exit
+telenav-bump-version
+
+cd "$TELENAV_WORKSPACE/kivakit-examples" || exit
+telenav-bump-version
+
+

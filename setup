@@ -1,15 +1,29 @@
 #!/bin/bash
 
+#
+# Get arguments
+#
+
+branch_name=$1
+caller=$2
+
+#
+# Set up TELENAV_WORKSPACE
+#
+
+# shellcheck disable=SC2164
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 if [[ -z "$TELENAV_WORKSPACE" ]]; then
     export TELENAV_WORKSPACE=$SCRIPT_PATH
 fi
 
+#
+# Load library functions
+#
+
 source "$TELENAV_WORKSPACE"/bin/telenav-library-functions
 
-branch_name=$1
-caller=$2
 
 check_tools "$caller"
 
@@ -22,17 +36,6 @@ if yes_no "┋ Remove entire local Maven repository (recommended)"; then
 
 fi
 
-
-#
-# Set HOME for continuous integration build
-#
-
-if [[ "$caller" == "ci-build" ]]; then
-
-    HOME=$(pwd)
-    export HOME
-
-fi
 
 #
 # Determine branch to set up
@@ -98,13 +101,6 @@ else
 fi
 
 #
-# Install superpoms
-#
-
-echo "Installing superpoms"
-maven --batch-mode -quiet -DKIVAKIT_LOG_LEVEL=Warning -f telenav-superpom/pom.xml clean install || exit 1
-
-#
 # Configure environment
 #
 
@@ -127,18 +123,6 @@ fi
 echo "Checking out branches"
 echo git submodule --quiet foreach "/bin/bash -c \"cd $TELENAV_WORKSPACE/\\\$path && if [[ \\\$path == *\"assets\" ]]; then git checkout publish; else git checkout $branch_name; fi\"" || exit 1
 git submodule --quiet foreach "/bin/bash -c \"cd $TELENAV_WORKSPACE/\\\$path && if [[ \\\$path == *\"assets\" ]]; then git checkout publish; else git checkout $branch_name; fi\"" || exit 1
-
-#
-# Build cactus
-#
-
-if [[ -d cactus ]]; then
-
-    echo " "
-    echo "Building cactus"
-    maven --batch-mode -quiet -DKIVAKIT_LOG_LEVEL=Warning -Dmaven.javadoc.skip=true -f cactus clean install || exit 1
-
-fi
 
 #
 # Install cactus scripts
