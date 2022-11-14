@@ -31,9 +31,10 @@ KivaKit and MesaKit:
 4. `telenav-commit && telenav-push`
 5. `telenav-clean-sparkling && kivakit-release && mesakit-release`
 6. **[check release]**
-7. **[publish release to maven central]**
-8. `kivakit-bump-version && mesakit-bump-version`
-9. `kivakit-merge-to-releases && mesakit-merge-to-releases`
+7. **[commit and push assets repositories]**
+8. **[publish release to maven central]**
+9. `kivakit-bump-version && mesakit-bump-version`
+10. `kivakit-merge-to-releases && mesakit-merge-to-releases`
  
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
