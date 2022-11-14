@@ -1,4 +1,3 @@
-
 ###########################################################################
 #
 # SAMPLE BASH PROFILE FOR TO SET UP A BUILD SHELL
@@ -15,15 +14,14 @@
 #
 
 export TELENAV_WORKSPACE=$HOME/Workspaces/telenav-build
-export CACTUS_GITHUB_PERSONAL_ACCESS_TOKEN=[personal-access-token]
-#export KIVAKIT_LOG_FORMATTER=wide
+export CACTUS_GITHUB_PERSONAL_ACCESS_TOKEN=[github-token]
 
 #
 # Required tools (Java and Maven)
 #
 
-export JAVA_HOME=$HOME/Developer/amazon-corretto-17.jdk/Contents/Home
-export M2_HOME=$HOME/Developer/apache-maven-3.8.5
+export JAVA_HOME=$HOME/Developer/jdk-17.0.5+8/Contents/Home
+export M2_HOME=$HOME/Developer/apache-maven-3.8.6
 
 #
 # Add cactus tools to path

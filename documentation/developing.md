@@ -7,15 +7,13 @@ If you are helping to develop Telenav Open Source projects this page will help y
 ### Index
 
  - [**Setup**](#setup)
- - [**Development Practices**](#development-practices)
+ - [**Our Development Practices**](#development-practices)
  - [**Convenient Scripts for Developers**](#scripts-for-developers)
- - [**Feature Development Workflow**](#workflow-for-developing-a-feature)
+ - [**Workflow for Developing a Feature**](#workflow-for-developing-a-feature)
  - [**Workspace Information**](#workspace-information)
  - [**Building**](#building)
- - [**Build Examples**](#build-examples)
- - [**Build Scopes**](#build-scopes)
- - [**Build Types**](#build-types)
- - [**Build Modifiers**](#build-modifiers)
+ - [**Releasing**](#releasing)
+ - [**Versioning**](#versioning)
  - [**Source Control**](#source-control)
  - [**Git Flow**](#git-flow)
  - [**Git Operations**](#git-operations)
@@ -23,8 +21,8 @@ If you are helping to develop Telenav Open Source projects this page will help y
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512-2x.png 2x"/>
 
-<a name = "setup"></a>
-## Setup
+<a name = "setup"></a> 
+## Setup &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/box-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/box-24-2x.png 2x"/>
 
 1. Follow the [Initial Setup Instructions](initial-setup-instructions.md).
 
@@ -48,7 +46,7 @@ Once you're ready to go, these articles can help you to understand our developme
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 <a name = "scripts-for-developers"></a>
-## Convenient Scripts for Developers
+## Convenient Scripts for Developers  &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/toolbox-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/toolbox-32-2x.png 2x"/>
 
 The `telenav-build/bin` folder contains a set of bash scripts, all prefixed with `telenav-`.
 After following the [Initial Setup Instructions](documentation/initial-setup-instructions.md), 
@@ -61,16 +59,17 @@ they are *not required*, merely convenient.
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 <a name = "feature-development"></a>
-## Workflow for Developing a Feature
+## Workflow for Developing a Feature &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/branch-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/branch-32-2x.png 2x"/>
 
-1. `telenav-develop`--switch all projects to the `develop` branch
-2. `telenav-start-feature hover-mode-#87`--create and switch all projects in the workspace to the feature/hover-mode#87branch
-3. [coding]
-4. `telenav-push`--push all relevant branches to Github
-5. `telenav-pull-request`--create a pull request for the branch
-6. [code review]
-7. `telenav-merge-pull-request`--merge all pull requests at once into the `develop` branch and delete the feature branch
-8. `telenav-develop`--switch all projects back to the `develop` branch
+
+1. `telenav-branch-develop` switches all projects to the `develop` branch
+2. `telenav-branch-start-feature hover-mode-#87` creates and switches all projects in the workspace to the `feature/hover-mode#87` branch
+3. **[coding]**
+4. `telenav-push` pushes all relevant branches to Github
+5. `telenav-pull-request` creates a pull request for the branch
+6. **[code review]**
+7. `telenav-pull-request-merge` merges all pull requests at once into the `develop` branch and delete the feature branch
+8. `telenav-branch-develop` switches all projects back to the `develop` branch
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -128,87 +127,64 @@ To get information about the projects in the Telenav workspace, run `telenav-wor
     ┋
     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-
+<br/>
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 <a name = "building"></a>
 ## Building &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/command-line-24.png" srcset="https://telenav.github.io/telenav-assets/images/icons/command-line-24-2x.png 2x"/> 
-The `telenav-build` script helps to compose Maven commands. It takes an optional `build-scope`,
-zero or more `build-modifiers`, and a `build-type`:
 
-`telenav-build` `[build-scope]`**?** `[build-modifier]`**&ast;** `[build-type]`
+The following script make building and releasing Telenav workspace projects easy:
 
-<a name = "build-examples"></a>
-### Build Examples &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/books-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/books-32-2x.png 2x"/>
+| Script                      | Purpose                                                                                       |
+|-----------------------------|-----------------------------------------------------------------------------------------------|
+| `telenav-clean`             | Prepares for a build by removing cache folders, and Telenav artifacts in the maven repository |
+| `telenav-clean-sparkling`   | Prepares for a build by removing cache folders, and the entire maven repository               |
+| `kivakit-build`             | Build all KivaKit projects                                                                    |
+| `lexakai-build`             | Build Lexakai                                                                                 |
+| `mesakit-build`             | Build all MesaKit projects                                                                    |
+| `telenav-workspace-build`   | Builds all projects in the workspace                                                          |
+| `telenav-third-party-build` | Builds third party JARs project                                                               |
 
-For example, `telenav-build kivakit release` builds a release of the KivaKit project family and uploads
-it to OSSRH (Maven Central staging). Some more examples:
+<br/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
-| Example Command                       | Purpose                                                                                            |
-|---------------------------------------|----------------------------------------------------------------------------------------------------|
-| `telenav-build`                       | Build all projects and run tests                                                                   |
-| `telenav-build help`                  | Show script help                                                                                   |
-| `telenav-build kivakit release`       | Build a release for the kivakit project family and upload it to OSSRH (Maven Central staging)      |
- | `telenav-build mesakit release-local` | Build a release for the mesakit project family but don't upload it                                 |
- | `telenav-build compile`               | Compile the code in all repositories                                                               |
- | `telenav-build clean`                 | Build all projects after removing cached and temporary files, and all Telenav repository artifacts |
-| `telenav-build clean-sparkling`       | Build completely from scratch after removing the entire local Maven repository                     |
-| `telenav-build javadoc`               | Build javadoc documentation for all project families                                               |
-| `telenav-build javadoc lexakai`       | Build javadoc and lexakai documentation for all project families                                   |
-| `telenav-build single-threaded`       | Build all projects with only one thread (12 is the default)                                        |
+<a name = "releasing"></a>
+## Releasing  &nbsp;  <img src="https://telenav.github.io/telenav-assets/images/icons/rocket-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/rocket-32-2x.png 2x"/>
 
-<a name = "build-scopes"></a>
-### Build Scopes
+Each project in the Telenav workspace has a simple script in the root called `release`. This
+script can be used to release the project. However, it is not typical to release one project
+at a time. Projects are released in groups, for example, the `kivakit` group includes the `kivakit`,
+`kivakit-extensions`, and `kivakit-stuff` repositories. The following scripts can be used to
+release all projects in a group. For information, see the [release process documentation](releasing.md).
 
-The `telenav-build` workspace can contain any set of Telenav Open Source projects.
-To allow `telenav-build` to build different subsets of these projects, an optional
-project `build-scope` specifier is accepted, which must be one of:
+| Script                        | Purpose                                                                           |
+|-------------------------------|-----------------------------------------------------------------------------------|
+| `telenav-clean-sparkling`     | Prepares for a release by removing cache folders, and the entire maven repository |
+| `kivakit-release`             | Release all KivaKit projects                                                      |
+| `lexakai-release`             | Release Lexakai                                                                   |
+| `mesakit-release`             | Release all MesaKit projects                                                      |
+| `telenav-third-party-release` | Release the telenav-third-party JARs project                                      |
 
-| Build Scope                           | Purpose                                                                                             | 
-|---------------------------------------|-----------------------------------------------------------------------------------------------------|
-| `all-project-families`  **[default]** | All repositories belonging to any project family                                                    |
-| `[project-family]`                    | All repositories belonging to a project family, such as `kivakit`, `mesakit`, `cactus` or `lexakai` |
+<br/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
-<a name = "build-types"></a>
-### Build Types &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/set-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/set-32-2x.png 2x"/>
+<a name = "versioning"></a>
+## Versioning 
 
-The `build-type` parameter to `telenav-build` specifies the goal of the build.
+The versions for all projects in a group can be updated with the following scripts. Each script bumps the
+project's version to the next dot release. The convention for versioning is that the `develop`
+branch for each repository contains the version for the next release. After that release is published, 
+one or more of the scripts below should be used to advance the `develop` branch to the next version
+number. **Note that there are no snapshot builds.**
 
-| Build Type              | Purpose                                                              |
-|-------------------------|----------------------------------------------------------------------|
-| `[default]`             | Builds projects, creates shaded jars and runs tests                  |
-| `compile`               | Compiles projects and creates shaded jars                            |
-| `help`                  | Shows help                                                           |
-| `javadoc`               | Builds javadoc                                                       |
-| `lexakai-documentation` | Builds lexakai documentation                                         |
-| `release-local`         | Builds a release                                                     |
-| `release`               | Builds a release and uploads it to OSSRH (staging for Maven Central) |
+| Script                             | Purpose                                                  |
+|------------------------------------|----------------------------------------------------------|
+| `kivakit-bump-version`             | Bump the version of all KivaKit projects                 |
+| `lexakai-bump-version`             | Bump the version of Lexakai                              |
+| `mesakit-bump-version`             | Bump the version of all MesaKit projects                 |
+| `telenav-third-party-bump-version` | Bump the version of the telenav-third-party JARs project |
 
-<a name = "build-modifiers"></a>
-### Build Modifiers &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/stars-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/stars-32-2x.png 2x"/>
-
-The `build-modifier` parameter(s) adds or removes switches from those specified by `build-type`.
-They effectively *modify* the kind of build.
-
-| Build Modifier          | Purpose                                                                    |
-|-------------------------|----------------------------------------------------------------------------|
-| `attach-jars`           | Attaches javadoc and source jars                                           |
-| `clean`                 | Prompts to remove cached and temporary files                               |
-| `clean-sparkling`       | Prompts to remove entire .m2 repository and all cached and temporary files |
-| `debug`                 | Turn on Maven debug output                                                 |
-| `debug-tests`           | Turn on Surefire debugging                                                 |
-| `dry-run`               | Show what Maven command would be run, without running it                   |
-| `lexakai-documentation` | Build lexakai documentation                                                |
-| `multi-threaded`        | Build with multiple threads                                                |
-| `no-javadoc`            | Turns off javadoc for a build type that normally includes it               |
-| `no-tests`              | Turns off testing for a build type that normally includes it               |
-| `quick-tests`           | Only run tests annotated with @QuickTest                                   |
-| `quiet`                 | Don't show surefire summaries or KivaKit information                       |
-| `sign-artifacts`        | Creates digital signatures for jar artifacts                               |
-| `single-threaded`       | Build with only one thread                                                 |
-| `tests`                 | Run tests for a build type that normally excludes testing                  |
-| `verbose`               | Build will normal output (default is quiet)                                |
-
+<br/>
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 <a name = "source-control"></a>
@@ -216,20 +192,24 @@ They effectively *modify* the kind of build.
 
 Telenav Open Source projects are published on [Github](https://www.github.com/) and use Git for source control. 
 
-&nbsp; <a name = "git-flow"></a>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
+
+<a name = "git-flow"></a>
 ### The Git Flow Branching Model
 
 Although Telenav Open Source projects do not use git flow, they adhere to the [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) branching model.
 This model specifies the following branch naming convention:
 
-| Git Flow Branch     | Purpose               |
-|---------------------|-----------------------|
-| `release/current`   | Latest stable release |
-| `release/[version]` | Release               |
-| `develop`           | Development build     |
-| `bugfix/*`          | Bug fix branches      |
-| `feature/*`         | Feature branches      |
-| `hotfix/*`          | Hot fix branches      |
+| Git Branch        | Purpose               |
+|-------------------|-----------------------|
+| `release/current` | Latest stable release |
+| `develop`         | Development build     |
+| `bugfix/*`        | Bug fix branches      |
+| `feature/*`       | Feature branches      |
+| `hotfix/*`        | Hot fix branches      |
+
+<br/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 <a name = "git-operations"></a>
 ### Git Operations
@@ -239,23 +219,32 @@ These scripts work on all projects in the workspace, which is the primary use ca
 granular work using scopes, see [Cactus](https://github.com/Telenav/cactus).
 
 
-| Script                                      | Purpose                                                                          |
-|---------------------------------------------|----------------------------------------------------------------------------------|
-| `telenav-checkout` `branch-name`            | Checks out the given branch of all repositories in the workspace                 |
-| `telenav-commit` `message`                  | Commits all workspace changes with the given message                             |
-| `telenav-reset`                             | Resets the workspace, losing all changes                                         |
-| `telenav-is-dirty`                          | Shows which repositories in the workspace are dirty                              |
-| `telenav-pull`                              | Pulls from all repositories in the workspace                                     |
-| `telenav-pull-request` `title` `body`       | Creates a pull request for all repositories in the workspace                     |
-| `telenav-push`                              | Pushes all changes in the workspace                                              |
-| `telenav-status`                            | Shows the status of all repositories in the workspace                            |
-| `telenav-start-[branch-type]` `branch-name` | Starts a branch of the given git-flow type for all repositories in the workspace |
+| Script                                             | Purpose                                                                          |
+|----------------------------------------------------|----------------------------------------------------------------------------------|
+| `telenav-branch` `branch-name`                     | Checks out the given branch of all repositories in the workspace                 |
+| `telenav-branch-develop`                           | Checks out the develop branch all repositories in the workspace                  |
+| `telenav-branch-start-[branch-type]` `branch-name` | Starts a branch of the given git-flow type for all repositories in the workspace |
+| `telenav-cactus-log`                               | Shows the cactus tool's log when a command fails                                 |
+| `telenav-commit` `message`                         | Commits all workspace changes with the given message                             |
+| `telenav-is-dirty`                                 | Shows which repositories in the workspace are dirty                              |
+| `telenav-pull`                                     | Pulls from all repositories in the workspace                                     |
+| `telenav-pull-request-approve` `branch` `body`     | Approves all pull requests for the given branch using the given body of text     |                                                    
+| `telenav-pull-request-create` `title` `body`       | Creates a pull request for all repositories in the workspace                     |
+| `telenav-pull-request-merge` `branch`              | Merges all pull requests of the given branch into the current branch             |
+| `telenav-pull-request-show-all` `branch`           | Shows all pull requests in a browser                                             |
+| `telenav-push`                                     | Pushes all changes in the workspace                                              |
+| `telenav-reset`                                    | Resets the workspace, losing all changes                                         |
+| `telenav-status`                                   | Shows the status of all repositories in the workspace                            |
+| `telenav-workspace-reset`                          | Hard resets the entire workspace                                                 |
 
 Here, `branch-type` must be one of:
 
  - `bugfix`
  - `feature`
  - `hotfix`
+
+<br/>
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
 <a name = "adding-a-submodule"></a>
 ### Adding a Submodule
@@ -267,7 +256,7 @@ git submodule add -b [branch-name] [repository-name]
 git submodule init  
 git submodule update
 ```
-
+<br/>
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512-2x.png 2x"/>
 
 <sub>Copyright &#169; 2011-2021 [Telenav](https://telenav.com), Inc. Distributed under [Apache License, Version 2.0](../LICENSE)</sub>  

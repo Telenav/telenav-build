@@ -7,7 +7,6 @@ This project combines all Telenav Open Source projects into a single parent repo
 using [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).  
 This enables a single, consistent build of any combination of the following projects:
 
- * *Cactus* - maven plugins and build libraries
  * *KivaKit* - general purpose development kit
  * *MesaKit* - development kit for map data processing
  * *Lexakai* - automated UML and markdown documentation tool
@@ -16,7 +15,6 @@ This enables a single, consistent build of any combination of the following proj
 
 | Repository                                                                    | Develop                                                                                                   |
 |-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| [cactus](https://github.com/Telenav/cactus/actions)                           | <img src="https://github.com/Telenav/cactus/actions/workflows/build-develop.yml/badge.svg"/>              |
 | [kivakit](https://github.com/Telenav/kivakit/actions)                         | <img src="https://github.com/Telenav/kivakit/actions/workflows/build-develop.yml/badge.svg"/>             |
 | [kivakit-extensions](https://github.com/Telenav/kivakit-extensions/actions)   | <img src="https://github.com/Telenav/kivakit-extensions/actions/workflows/build-develop.yml/badge.svg"/>  |
 | [kivakit-filesystems](https://github.com/Telenav/kivakit-filesystems/actions) | <img src="https://github.com/Telenav/kivakit-filesystems/actions/workflows/build-develop.yml/badge.svg"/> |
@@ -28,9 +26,6 @@ This enables a single, consistent build of any combination of the following proj
 | [mesakit-examples](https://github.com/Telenav/mesakit-examples/actions)       | <img src="https://github.com/Telenav/mesakit-examples/actions/workflows/build-develop.yml/badge.svg"/>    |
 
 <br/>
-
-> Note: The Maven `pom.xml` in this project is _bill of materials only_, and simply builds all child projects.  
-> Since they are all built in the same [Maven reactor](https://books.sonatype.com/mvnref-book/reference/_using_advanced_reactor_options.html), breaking changes can be detected immediately.
 
 > [**How to Build Telenav Open Source Projects**](documentation/building.md)
 

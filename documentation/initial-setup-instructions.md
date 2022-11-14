@@ -71,12 +71,47 @@ To create an environment for future builds, you must set some environment variab
 You can either `cp setup/profile ~/.profile`, or you can modify your existing profile accordingly.
 The resulting `.profile` should include steps similar to this:
 
-    export TELENAV_WORKSPACE=$HOME/Workspaces/telenav-build
-    export JAVA_HOME=/Users/jonathan/Developer/amazon-corretto-17.jdk/Contents/Home
-    export M2_HOME=/Users/jonathan/Developer/apache-maven-3.8.5
+```
+###########################################################################
+#
+# SAMPLE BASH PROFILE FOR TO SET UP A BUILD SHELL
+#
+# 1. Adjust the paths below to point to your own workspace and tools
+# 2. Set CACTUS_GITHUB_PERSONAL_ACCESS_TOKEN to your personal access token
+#    if you want to be able to create pull requests
+# 3. Add the resulting lines to your ~/.profile
+# 4. Shutdown your shell program and restart it
+#
 
-    cd $TELENAV_WORKSPACE
-    source source-me
+#
+# Location of telenav-build workspace (this checkout)
+#
+
+export TELENAV_WORKSPACE=$HOME/Workspaces/telenav-build
+export CACTUS_GITHUB_PERSONAL_ACCESS_TOKEN=[github-token]
+
+#
+# Required tools (Java and Maven)
+#
+
+export JAVA_HOME=$HOME/Developer/jdk-17.0.5+8/Contents/Home
+export M2_HOME=$HOME/Developer/apache-maven-3.8.6
+
+#
+# Add cactus tools to path
+#
+
+export PATH=$HOME/bin:$PATH
+
+#
+# Configure build environment
+#
+
+cd $TELENAV_WORKSPACE
+source source-me
+
+###########################################################################
+```
     
 > WARNING: Be sure to shut down your terminal program and restart it after making this change
 
