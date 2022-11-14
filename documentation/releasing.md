@@ -22,21 +22,18 @@ Although Telenav Open Source projects do not use git flow, they adhere to the [G
 
 ## 2. Releasing &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/branch-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/branch-32-2x.png 2x"/>
 
-To create a release, we must follow the steps below. A summary of those steps:
+To create a release, we must follow the steps below. A summary of the steps required to release  
+KivaKit and MesaKit:
 
 1. `telenav-branch-develop`
 2. **[update change-log.md]**
-3. `telenav-commit`
-4. `telenav-push`
-5. `telenav-clean-sparkling`
-6. `kivakit-release`
-7. `mesakit-release`
-8. **[check release]**
-9. **[publish release]**
-10. `kivakit-bump-version`
-11. `mesakit-bump-version`
-12. `kivakit-merge-to-releases`
-13. `mesakit-merge-to-releases`
+3. **[update kivakit.version]**
+4. `telenav-commit && telenav-push`
+5. `telenav-clean-sparkling && kivakit-release && mesakit-release`
+6. **[check release]**
+7. **[publish release to maven central]**
+8. `kivakit-bump-version && mesakit-bump-version`
+9. `kivakit-merge-to-releases && mesakit-merge-to-releases`
  
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
