@@ -16,6 +16,6 @@ fi
 
 if [ -z "$TAG" ]; then
     git checkout releases
-    git merge develop
+    git merge --squash develop
     git tag "$TAG"
 fi
