@@ -49,4 +49,9 @@
 	url = https://github.com/Telenav/kivakit-assets.git
 	branch = publish
     shallow = true
+[submodule "telenav-third-party"]
+	path = telenav-third-party
+	url = https://github.com/Telenav/telenav-third-party.git
+	branch = publish
+    shallow = true
 
