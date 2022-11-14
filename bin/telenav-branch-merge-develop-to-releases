@@ -14,8 +14,12 @@ if [ -z "$TAG" ]; then
     TAG=$REPLY
 fi
 
-if [ -z "$TAG" ]; then
-    git checkout releases
-    git merge --squash develop
-    git tag "$TAG"
+if [ -n "$TAG" ]; then
+    git checkout releases || exit
+    git merge --squash develop || exit
+    git tag -a "$TAG" -m "Tag for release $TAG"
+    git push origin --tags
+    git commit -m "Merging $TAG to releases" || exit
+    git push || exit
+    git checkout develop || exit
 fi
