@@ -1,0 +1,26 @@
+#!/usr/bin/env perl
+
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#
+#  © 2011-2021 Telenav, Inc.
+#  Licensed under Apache License, Version 2.0
+#
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+use 5.018;
+use strict;
+use warnings;
+
+require "$ENV{'TELENAV_WORKSPACE'}/bin/telenav-functions.pl";
+
+announce("Switching to branch 'releases'");
+
+cactus("checkout",
+      "-Dcactus.fetch-first=true",
+      "-Dcactus.push=false",
+      "-Dcactus.target-branch=releases",
+      "-Dcactus.update-root=true",
+      "-Dcactus.include-root=true",
+      "-Dcactus.permit-local-changes=true");
+
+announce("Switched to branch 'releases''");

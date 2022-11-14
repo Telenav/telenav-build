@@ -6,9 +6,9 @@ name: Build telenav-build
 on:
   workflow_dispatch:
   push:
-    branches: [ "release/current", "develop" ]
+    branches: [ "releases", "develop" ]
   pull_request:
-    branches: [ "release/current", "develop"  ]
+    branches: [ "releases", "develop"  ]
 
 jobs:
   build:

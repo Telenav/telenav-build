@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#
+#  © 2011-2021 Telenav, Inc.
+#  Licensed under Apache License, Version 2.0
+#
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+cd "$TELENAV_WORKSPACE/kivakit" || exit
+telenav-branch-merge-develop-to-releases
+
+cd "$TELENAV_WORKSPACE/kivakit-extensions" || exit
+telenav-branch-merge-develop-to-releases
+
+cd "$TELENAV_WORKSPACE/kivakit-stuff" || exit
+telenav-branch-merge-develop-to-releases
+

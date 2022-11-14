@@ -22,7 +22,21 @@ Although Telenav Open Source projects do not use git flow, they adhere to the [G
 
 ## 2. Releasing &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/branch-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/branch-32-2x.png 2x"/>
 
-To create a release, we must follow the steps below.
+To create a release, we must follow the steps below. A summary of those steps:
+
+1. `telenav-branch-develop`
+2. **[update change-log.md]**
+3. `telenav-commit`
+4. `telenav-push`
+5. `telenav-clean-sparkling`
+6. `kivakit-release`
+7. `mesakit-release`
+8. **[check release]**
+9. **[publish release]**
+10. `kivakit-bump-version`
+11. `mesakit-bump-version`
+12. `kivakit-merge-to-releases`
+13. `mesakit-merge-to-releases`
  
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
@@ -35,16 +49,6 @@ To create a release:
 3. Commit any outstanding changes and push them
 4. Clean out any cache folders, and the maven repository with `telenav-clean-sparkling` 
 5. Build the release with the script for your project group, like `kivakit-release`
-
-```
-telenav-branch-develop
-[update change-log.md]
-telenav-commit
-telenev-push
-telenav-clean-sparkling
-kivakit-release
-mesakit-release
-```
 
 It is normally necessary to update mesakit when kivakit is updated to make sure that only one version
 of KivaKit is used at a time.
@@ -59,7 +63,7 @@ commit and push the changes.
 
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
 
-### 2.3 Publishing the Release &nbsp; <img src="https://telenav.github.io/telenav-assets/images/icons/rocket-32.png" srcset="https://telenav.github.io/telenav-assets/images/icons/rocket-32-2x.png 2x"/>
+### 2.3 Publishing the Release
 
 The release should now be ready for Maven Central. We must sign into Sonatype [OSSRH](https://s01.oss.sonatype.org) (using credentials provided by a project administrator), and push the release:
 
@@ -76,6 +80,13 @@ The release should now be ready for Maven Central. We must sign into Sonatype [O
 The project versions on the develop branch should be updated with the appropriate script for the
 project group, for example, `kivakit-bump-version`. These changes should be examined, committed,
 and pushed.
+
+<img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
+
+### 2.5 Merging to the Releases Branch
+
+The released code should be merged to the `releases` branch and marked with a tag using the appropriate script,
+such as `kivakit-merge-to-releases`. These changes should be examined, committed, and pushed.
 
 <br/>
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-512-2x.png 2x"/>

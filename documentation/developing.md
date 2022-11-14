@@ -157,13 +157,17 @@ at a time. Projects are released in groups, for example, the `kivakit` group inc
 `kivakit-extensions`, and `kivakit-stuff` repositories. The following scripts can be used to
 release all projects in a group. For information, see the [release process documentation](releasing.md).
 
-| Script                        | Purpose                                                                           |
-|-------------------------------|-----------------------------------------------------------------------------------|
-| `telenav-clean-sparkling`     | Prepares for a release by removing cache folders, and the entire maven repository |
-| `kivakit-release`             | Release all KivaKit projects                                                      |
-| `lexakai-release`             | Release Lexakai                                                                   |
-| `mesakit-release`             | Release all MesaKit projects                                                      |
-| `telenav-third-party-release` | Release the telenav-third-party JARs project                                      |
+| Script                                  | Purpose                                                                           |
+|-----------------------------------------|-----------------------------------------------------------------------------------|
+| `telenav-clean-sparkling`               | Prepares for a release by removing cache folders, and the entire maven repository |
+| `kivakit-release`                       | Release all projects                                                              |
+| `lexakai-release`                       | Release project                                                                   |
+| `mesakit-release`                       | Release all projects                                                              |
+| `telenav-third-party-release`           | Release all projects                                                              |
+| `kivakit-merge-to-releases`             | Merges develop to releases                                                        |
+| `lexakai-merge-to-releases`             | Merges develop to releases                                                        |
+| `mesakit-merge-to-releases`             | Merges develop to releases                                                        |
+| `telenav-third-party-merge-to-releases` | Merges develop to releases                                                        |
 
 <br/>
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
@@ -200,13 +204,13 @@ Telenav Open Source projects are published on [Github](https://www.github.com/) 
 Although Telenav Open Source projects do not use git flow, they adhere to the [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) branching model.
 This model specifies the following branch naming convention:
 
-| Git Branch        | Purpose               |
-|-------------------|-----------------------|
-| `release/current` | Latest stable release |
-| `develop`         | Development build     |
-| `bugfix/*`        | Bug fix branches      |
-| `feature/*`       | Feature branches      |
-| `hotfix/*`        | Hot fix branches      |
+| Git Branch  | Purpose           |
+|-------------|-------------------|
+| `released`  | Releases          |
+| `develop`   | Development build |
+| `bugfix/*`  | Bug fix branches  |
+| `feature/*` | Feature branches  |
+| `hotfix/*`  | Hot fix branches  |
 
 <br/>
 <img src="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128.png" srcset="https://telenav.github.io/telenav-assets/images/separators/horizontal-line-128-2x.png 2x"/>
