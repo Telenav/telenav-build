@@ -17,7 +17,6 @@ This enables a single, consistent build of any combination of the following proj
 |-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
 | [kivakit](https://github.com/Telenav/kivakit/actions)                         | <img src="https://github.com/Telenav/kivakit/actions/workflows/build-develop.yml/badge.svg"/>             |
 | [kivakit-extensions](https://github.com/Telenav/kivakit-extensions/actions)   | <img src="https://github.com/Telenav/kivakit-extensions/actions/workflows/build-develop.yml/badge.svg"/>  |
-| [kivakit-filesystems](https://github.com/Telenav/kivakit-filesystems/actions) | <img src="https://github.com/Telenav/kivakit-filesystems/actions/workflows/build-develop.yml/badge.svg"/> |
 | [kivakit-stuff](https://github.com/Telenav/kivakit-stuff/actions)             | <img src="https://github.com/Telenav/kivakit-stuff/actions/workflows/build-develop.yml/badge.svg"/>       |
 | [kivakit-examples](https://github.com/Telenav/kivakit-examples/actions)       | <img src="https://github.com/Telenav/kivakit-examples/actions/workflows/build-develop.yml/badge.svg"/>    |
 | [lexakai](https://github.com/Telenav/lexakai/actions)                         | <img src="https://github.com/Telenav/lexakai/actions/workflows/build-develop.yml/badge.svg"/>             |
