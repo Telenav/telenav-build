@@ -47,40 +47,36 @@ step "2. Update change-log.md"
 
 confirm_done
 
-step "3. Update references to kivakit.version"
-
-confirm_done
-
-step "4. Commit and push changes"
+step "3. Commit and push changes"
 
 telenav-commit "prepare for release"
 telenav-push
 
-step "5. Clean and build the release"
+step "4. Clean and build the release"
 
 telenav-clean-sparkling
 kivakit-release
 mesakit-release
 
-step "6. Check the release and add any newly created files"
+step "5. Check the release and add any newly created files"
 
 confirm_done
 
-step "7. Commit and push assets repositories"
+step "6. Commit and push assets repositories"
 
 telenav-commit "update documentation assets"
 telenav-push
 
-step "8. Publish the release to maven central"
+step "7. Publish the release to maven central"
 
 confirm_done
 
-step "9. Merging develop branch to releases"
+step "8. Merging develop branch to releases"
 
 kivakit-merge-to-releases
 mesakit-merge-to-releases
 
-step "10. Bumping version numbers"
+step "9. Bumping version numbers"
 
 kivakit-bump-version
 mesakit-bump-version
