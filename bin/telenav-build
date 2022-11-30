@@ -1,0 +1,176 @@
+#!/usr/bin/env perl
+
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#
+#  © 2011-2021 Telenav, Inc.
+#  Licensed under Apache License, Version 2.0
+#
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+use 5.018;
+use strict;
+use warnings;
+use feature qw(switch);
+no warnings qw( experimental::smartmatch );
+
+my @java_switches = ();
+my @switches = ("--errors");
+my @arguments = ();
+my @pre_commands = ();
+my @post_commands = ();
+my $explain = 0;
+
+sub remove
+{
+    my $to_remove = shift @_;
+    grep {!/$to_remove/} @_;
+}
+
+sub run_command
+{
+    if ($explain == 1)
+    {
+        print "@_\n";
+    }
+    else
+    {
+        system(@_);
+    }
+}
+
+sub help
+{
+    print qq!
+telenav-build [arguments]* [goals]*
+
+    clean       remove telenav artifacts and caches
+    debug       build with debugging information
+    explain     show commands that would be executed without running them
+    fast        build without javadoc or tests
+    no-javadoc  don't build javadoc
+    no-tests    don't run tests
+    quiet       minimize output
+    slow        build with only one thread
+    sparkling   remove all artifacts and caches
+
+!;
+    exit 1
+}
+
+sub fast
+{
+    no_tests();
+    no_javadoc();
+    quiet();
+    push(@switches, "--threads", "4")
+}
+
+sub no_tests
+{
+    push(@java_switches, "-Dmaven.test.skip=true")
+}
+
+sub no_javadoc
+{
+    push(@java_switches, "-Dmaven.javadoc.skip=true")
+}
+
+sub quiet
+{
+    push(@switches, "--quiet", "--batch-mode", "--no-transfer-progress", "-DKIVAKIT_LOG_LEVEL=Warning")
+}
+
+sub clean
+{
+    push(@arguments, "clean", "install");
+    if (!is_continued())
+    {
+        push(@pre_commands, "telenav-clean")
+    }
+}
+
+sub sparkling
+{
+    if (!is_continued())
+    {
+        push(@pre_commands, "telenav-clean-sparkling")
+    }
+}
+
+sub debug
+{
+    push(@switches, "-X")
+}
+
+sub explain
+{
+    $explain = 1
+}
+
+sub add_argument
+{
+    my $argument = shift @_;
+    push(@arguments, $argument)
+}
+
+sub project
+{
+    my @pwd = split(m!/!, `pwd`);
+    return pop @pwd;
+}
+
+sub is_continued
+{
+    return grep("continued", @ARGV);
+}
+
+sub process_arguments
+{
+    foreach my $argument (@ARGV)
+    {
+        given ($argument)
+        {
+            when ("clean")        { clean()                 }
+            when ("debug")        { debug()                 }
+            when ("explain")      { explain()               }
+            when ("fast")         { fast()                  }
+            when ("help")         { help()                  }
+            when ("no-javadoc")   { no_javadoc()            }
+            when ("no-tests")     { no_tests()              }
+            when ("quiet")        { quiet()                 }
+            when ("sparkling")    { sparkling()             }
+            when ("continued")    {                         }
+            default               { add_argument($argument) }
+        }
+    }
+
+    if (!@arguments)
+    {
+        @arguments = ("clean", "install");
+    }
+}
+
+sub build
+{
+    my $build = "mvn @java_switches @switches @arguments";
+    $build =~ s/ +/ /g;
+
+    print("┋ Building " . project());
+
+    foreach my $command (@pre_commands)
+    {
+        run_command($command);
+    }
+
+    run_command($build);
+
+    foreach my $command (@post_commands)
+    {
+        run_command($command);
+    }
+}
+
+process_arguments();
+
+build();
+

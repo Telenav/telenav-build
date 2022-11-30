@@ -8,10 +8,10 @@
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 cd "$TELENAV_WORKSPACE/mesakit" || exit
-mvn clean install
+telenav-build "$@" || exit
 
 cd "$TELENAV_WORKSPACE/mesakit-extensions" || exit
-mvn clean install
+telenav-build "$@" continued || exit
 
 cd "$TELENAV_WORKSPACE/mesakit-examples" || exit
-mvn clean install
+telenav-build "$@" continued || exit

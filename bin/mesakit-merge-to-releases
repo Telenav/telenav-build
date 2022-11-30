@@ -7,9 +7,16 @@
 #
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+TAG=$1
+
+if [ -z "$TAG" ]; then
+    read -r -p "MesaKit Release Tag? "
+    TAG=$REPLY
+fi
+
 cd "$TELENAV_WORKSPACE/mesakit" || exit
-telenav-branch-merge-develop-to-releases
+telenav-branch-merge-develop-to-releases "$TAG" || exit
 
 cd "$TELENAV_WORKSPACE/mesakit-extensions" || exit
-telenav-branch-merge-develop-to-releases
+telenav-branch-merge-develop-to-releases "$TAG" || exit
 

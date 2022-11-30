@@ -9,6 +9,6 @@
 
 source telenav-functions
 
-cd_workspace
+cd_workspace || exit
+telenav-build "$@" || exit
 
-mvn -quiet -DKIVAKIT_LOG_LEVEL=Warning clean install

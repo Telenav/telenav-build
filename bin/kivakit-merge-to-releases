@@ -7,12 +7,19 @@
 #
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+TAG=$1
+
+if [ -z "$TAG" ]; then
+    read -r -p "KivaKit Release Tag? "
+    TAG=$REPLY
+fi
+
 cd "$TELENAV_WORKSPACE/kivakit" || exit
-telenav-branch-merge-develop-to-releases
+telenav-branch-merge-develop-to-releases "$TAG" || exit
 
 cd "$TELENAV_WORKSPACE/kivakit-extensions" || exit
-telenav-branch-merge-develop-to-releases
+telenav-branch-merge-develop-to-releases "$TAG" || exit
 
 cd "$TELENAV_WORKSPACE/kivakit-stuff" || exit
-telenav-branch-merge-develop-to-releases
+telenav-branch-merge-develop-to-releases "$TAG" || exit
 

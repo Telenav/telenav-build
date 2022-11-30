@@ -8,14 +8,14 @@
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 cd "$TELENAV_WORKSPACE/kivakit" || exit
-mvn clean install
+telenav-build "$@" || exit
 
 cd "$TELENAV_WORKSPACE/kivakit-extensions" || exit
-mvn clean install
+telenav-build "$@" continued || exit
 
 cd "$TELENAV_WORKSPACE/kivakit-stuff" || exit
-mvn clean install
+telenav-build "$@" continued || exit
 
 cd "$TELENAV_WORKSPACE/kivakit-examples" || exit
-mvn clean install
+telenav-build "$@" continued || exit
 

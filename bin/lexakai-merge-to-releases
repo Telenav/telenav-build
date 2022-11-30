@@ -7,5 +7,12 @@
 #
 #///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+TAG=$1
+
+if [ -z "$TAG" ]; then
+    read -r -p "Lexakai Release Tag? "
+    TAG=$REPLY
+fi
+
 cd "$TELENAV_WORKSPACE/lexakai" || exit
-telenav-branch-merge-develop-to-releases
+telenav-branch-merge-develop-to-releases "$TAG" || exit
