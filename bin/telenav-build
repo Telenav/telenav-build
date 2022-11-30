@@ -62,7 +62,6 @@ sub fast
     no_tests();
     no_javadoc();
     quiet();
-    push(@switches, "--threads", "4")
 }
 
 sub no_tests
