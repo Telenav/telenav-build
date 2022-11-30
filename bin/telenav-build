@@ -49,8 +49,8 @@ telenav-build [arguments]* [goals]*
     fast        build without javadoc or tests
     no-javadoc  don't build javadoc
     no-tests    don't run tests
+    parallel    build with multiple threads
     quiet       minimize output
-    slow        build with only one thread
     sparkling   remove all artifacts and caches
 
 !;
@@ -123,6 +123,11 @@ sub is_continued
     return grep("continued", @ARGV);
 }
 
+sub parallel
+{
+    push(@switches, "--threads", "16")
+}
+
 sub process_arguments
 {
     foreach my $argument (@ARGV)
@@ -136,6 +141,7 @@ sub process_arguments
             when ("help")         { help()                  }
             when ("no-javadoc")   { no_javadoc()            }
             when ("no-tests")     { no_tests()              }
+            when ("parallel")     { parallel()              }
             when ("quiet")        { quiet()                 }
             when ("sparkling")    { sparkling()             }
             when ("continued")    {                         }
