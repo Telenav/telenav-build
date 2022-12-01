@@ -15,11 +15,50 @@ if [ -z "$TAG" ]; then
 fi
 
 if [ -n "$TAG" ]; then
-    git checkout releases || exit
-    git merge -s theirs --squash develop || exit
+
+    PROJECT=${PWD##*/}
+
+    git config --global core.autocrlf false
+
+    echo "Merging $PROJECT to releases"
+
+    RELEASES="$TMPDIR/releases"
+    DEVELOP="$TMPDIR/develop"
+
+    echo " - Removing temporary folders"
+    rm -rf "$RELEASES"
+    rm -rf "$DEVELOP"
+    mkdir -p "$RELEASES"
+    mkdir -p "$DEVELOP"
+
+    echo " - Cloning $PROJECT/develop"
+    cd "$DEVELOP" || exit
+    git clone --quiet --branch develop "https://github.com/Telenav/$PROJECT.git"
+
+    echo " - Cloning $PROJECT/releases"
+    cd "$RELEASES" || exit
+    git clone --quiet --branch releases "https://github.com/Telenav/$PROJECT.git"
+
+    echo " - Removing files from $PROJECT/releases"
+    cd "$RELEASES/$PROJECT" || exit
+    git rm --quiet -rf ./*
+
+    echo " - Copying files from $PROJECT/develop"
+    cd "$DEVELOP/$PROJECT" || exit
+    rsync --archive --quiet --exclude='.git*' --exclude='*.iml' --exclude='.idea' --exclude='target' --exclude='*~' --exclude='.DS_Store' . "$RELEASES/$PROJECT"
+
+    echo " - Adding files to releases"
+    cd "$RELEASES/$PROJECT" || exit
+    git add .
+
+    echo " - Tagging release"
     git tag -a "$TAG" -m "Tag for release $TAG"
-    git push origin --tags
-    git commit -m "Merging $TAG to releases" || exit
-    git push || exit
-    git checkout develop || exit
+    git push --quiet origin --tags
+
+    echo " - Committing changes"
+    git commit --quiet -m "Merging $TAG to releases" || exit
+
+    echo " - Pushing to origin"
+    git push --quiet || exit
+
 fi
